@@ -1,0 +1,71 @@
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* header-fixed */
+#header--fixed {
+    background-color: blanchedalmond;
+    margin: 0;
+}
+
+#header--fixed:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#header--fixed h1 {
+    float: left;
+    margin: 0 0 0 20px;
+    background-color: burlywood;
+}
+
+#header--fixed .header-logo {
+    height: 60px;
+    vertical-align: bottom;
+}
+
+#header--fixed .header-logo:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.global-navi ul{
+    float: right;
+    height: 60px;
+    margin: 0 auto;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: aqua;
+}
+
+.global-navi ul:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.global-navi ul li {
+    margin: 0 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.global-navi ul li img {
+    margin: 0 8px;
+    max-height: 20px;
+}
+
+.global-navi ul li img.global-navi--margin-left {
+    margin-left: 20px;
+    background-color: cadetblue;
+}
+/* ↑ liやimgだけだと上手く効かないのはなぜ */
+
