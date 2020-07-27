@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="common/stylesheet.css">
     <link rel="stylesheet" href="common/normalize.css">
-    <title>NRI 野村総合研究所</title>
+    <link rel="stylesheet" href="common/stylesheet.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.slider').bxSlider({
+        auto: true,
+        speed: 1000,
+        pause: 4000
+        });
+      });
+    </script>
+    <title>NRI 野村総合研究所</title>   
 </head>
 <body>
+
     <header id="header--fixed">
         <h1><img src="common/images/apple-touch-icon.png" alt="NRI ロゴ" class="header-logo"></h1>
         <nav class="global-navi">
@@ -26,32 +39,53 @@
         </nav>
     </header>
     <main>
-        <section class="main-visual">
-            <article>
-                <h2>新型コロナウイルス緊急対策宣言</h2>
-                <p>新型コロナウイルス対策に関するNRIグループの提言</p>
-                <p><a href="#">詳細を見る</a></p>
-            </article>
-            <article>
-                <h2>DX</h2>
-                <p>デジタル技術で業務プロセスを変革し、<br>
-                新たなビジネルモデルを創造する</p>
-                <p><a href="#">詳細を見る</a></p>
-            </article>
-            <article>
-                <h2>価値<span>共</span>創</h2>
-                <p>創業以来変わらぬ社会課題の解決に<br>
-                貢献する姿勢で、価値共創を実現する</p>
-                <p><a href="#">詳細を見る</a></p>
-            </article>
-            <article>
-                <h2>NRI学生小論文</h2>
-                <p>高校生・大学生に日本や世界の未来について<br>
-                考えてもらう機会を提供する</p>
-                <p><a href="#">詳細を見る</a></p>
-            </article>
-            <p>令和2年7月豪雨災害により被災された方々に対し、心よりお見舞い申し上げます。</p>
-        </section>
+        <section class="top-slide"><!-- bxslider まだ途中-->
+                <div class="slider">
+                    <article>
+                        <img src="common/images/top-slide/proposal_main01.jpg" alt="">
+                        <div class="top-slide__inner">
+                            <div class="top-slide__inner-text">
+                                <h2>新型コロナウイルス緊急対策宣言</h2>
+                                <p>新型コロナウイルス対策に関するNRIグループの提言</p>
+                            </div>
+                            <p class="top-slide__inner-detail"><a href="#">詳細を見る<span>&gt;</span></a></p>
+                    </article>
+                    <article>
+                        <img src="common/images/top-slide/dx_main_2.jpg" alt="">
+                        <div class="top-slide__inner">
+                            <div class="top-slide__inner-text">
+                                <h2>DX</h2>
+                                <p>デジタル技術で業務プロセスを変革し、<br>
+                                新たなビジネルモデルを創造する</p>
+                            </div>
+                            <p class="top-slide__inner-detail"><a href="#">詳細を見る<span>&gt;</span></a></p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="common/images/top-slide/cocreation_main.jpg" alt="">
+                        <div class="top-slide__inner">
+                            <div class="top-slide__inner-text">
+                                <h2>価値<span class="top-slide__inner-text--orange">共</span>創</h2>
+                                <p>創業以来変わらぬ社会課題の解決に<br>
+                                貢献する姿勢で、価値共創を実現する</p>
+                            </div>
+                            <p class="top-slide__inner-detail"><a href="#">詳細を見る<span>&gt;</span></a></p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="common/images/top-slide/contest2020_main.jpg" alt="">
+                        <div class="top-slide__inner">
+                        <div class="top-slide__inner-text">
+                            <h2>NRI学生小論文コンテスト2020</h2>
+                            <p>高校生・大学生に日本や世界の未来について<br>
+                            考えてもらう機会を提供する</p>
+                        </div>
+                        <p class="top-slide__inner-detail"><a href="#">詳細を見る<span>&gt;</span></a></p>
+                    </div>
+                    </article>
+                </div>
+            <p class="top-slide__sub-text">令和2年7月豪雨災害により被災された方々に対し、心よりお見舞い申し上げます。</p>
+        </section><!--とりあえずここまで終了-->
         <section class="hot-keyword">
             <h3>HOT KEYWORD</h3>
             <ul>
@@ -273,5 +307,8 @@
         <aside>copyright Nomura Research Institute, Ltd. All rights reserverd.</aside>
     </footer>
     <div class="back-to-top"></div>
+
+    
+
 </body>
 </html>
