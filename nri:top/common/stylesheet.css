@@ -1,0 +1,165 @@
+body {
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* header */
+#header--fixed {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#header--fixed a {
+    color: inherit;
+}
+
+#header--fixed h1 {
+    margin: 0 0 0 20px;
+}
+
+#header--fixed .header-logo {
+    height: 60px;
+    vertical-align: bottom;
+}
+
+.global-navi ul{
+    height: 60px;
+    margin: 0 auto;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.global-navi ul:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.global-navi ul li {
+    margin: 0 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.global-navi ul li img {
+    margin: 0 8px;
+    max-height: 20px;
+}
+
+.global-navi ul li img.global-navi--margin-left {
+    margin-left: 20px;
+}
+/* ↑ liやimgだけだと上手く効かないのはなぜ */
+
+/* top-slide */
+.top-slide {
+    margin-top: 80px;
+}
+
+.top-slide article {
+    position: relative;
+}
+
+.top-slide__inner {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    text-shadow: #000 0 0 10px;
+}
+
+.top-slide__inner-text h2 {
+    font-size: 75px;
+    font-weight: normal;
+    line-height: 1.1;
+}
+
+.top-slide__inner-text p {
+    font-size: 20px;
+    line-height: 2;
+}
+
+.top-slide__inner-text--orange {
+    color: #f16300;
+}
+
+.top-slide__inner-detail {
+    display: block;
+    background-color: #004196;
+    width: 200px;
+    padding: 20px 10px;
+    margin-top: 75px;
+}
+
+.top-slide__inner-detail a {
+    color: #fff;
+}
+
+.top-slide__inner-detail a span {
+    margin: 0 0 0 100px;
+}
+
+.top-slide__sub-text {
+    text-align: center;
+}
+
+/* hot-keyword */
+.hot-keyword {
+    background-color: dodgerblue;
+    height: 100px;
+    color: #fff;
+}
+
+.hot-keyword ul {
+    height: 100px;
+    display: flex;
+    background-color: firebrick;
+}
+
+.hot-keyword ul li {
+    background-color: forestgreen;
+}
+
+.hot-keyword ul li h3 {
+    font-size: 30px;
+    border-left: #fff solid 3px;
+    line-height: 2;
+    background-color: #333;
+    margin: 20px 20px;
+}
+
+.hot-keyword ul li a {
+    display: block;
+    padding: 40px 20px;
+    max-height: 90px;
+    width: 200px;
+    margin: 5px 0 0 0;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: fuchsia;
+    text-align: center;
+    border-left: #fff 1px solid;
+}
+
+.hot-keyword ul li a:first-child{
+    padding-top: 30px;
+}
+
+.hot-keyword ul li a:hover {
+    opacity: 0.8;
+}
