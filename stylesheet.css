@@ -1,0 +1,196 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul li {
+    list-style: none;
+}
+
+/* header-fixed */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.header-fixed .logo {
+    height: 50px;
+    margin-left: 40px;
+    vertical-align: bottom;
+}
+
+.global-navi {
+    display: flex;
+    justify-content: space-between;
+}
+
+.global-navi ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    max-height: 60px;
+}
+
+.global-navi ul.global-navi--text {
+    margin-left: 250px;
+}
+
+.global-navi ul.global-navi--text li {
+    margin: 0 10px;
+}
+
+.global-navi ul.global-navi--image li {
+    margin: 0 11px;
+}
+
+.global-navi ul li a {
+    display: block;
+    padding: 18px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.global-navi ul.global-navi--text li a:hover {
+    border-bottom: blue 1px solid;
+}
+
+.global-navi ul li img {
+    padding-left: 0;
+    max-height: 20px;
+}
+
+/* breadcrumb */
+.breadcrumb {
+    margin: 60px auto 50px 50px;
+    font-size: 12px;
+}
+
+.breadcrumb a {
+    color: #999;
+}
+
+/* article-head */
+.article-head {
+    position: relative;
+}
+
+.article-head img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.article-head--inner-text {
+    position: absolute;
+    color: #fff;
+    top: 30px;
+    left: 250px;
+}
+
+.article-head--inner-text h1 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+/* sns-button */
+
+
+/* article */
+main article {
+    width: 57%;
+    margin: 0 auto;
+}
+
+article h2 {
+    background: #fff no-repeat url(images/bg-heading-h2.png) 0 50%;
+    background-size: 20px 20px;
+    padding-left: 30px;
+}
+
+article p {
+    line-height: 1.7;
+    color: #333;
+}
+
+article img {
+    margin: 20px auto;
+}
+
+.article--pdf {
+    display: block;
+    color: #fff;
+    background-color: #005bac;
+    padding: 10px 0;
+    text-align: center;
+    width: 300px;
+    margin: 10px auto 80px auto;
+}
+
+.article--pdf:hover {
+    opacity: 0.8;
+}
+
+.article--pdf span {
+    position: relative;
+    top: 12px;
+    left: -5px;
+    font-size: 8px;
+}
+
+.article--pdf img {
+    margin: 0;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+article .prev-page,
+article .next-page{
+    display: inline-block;
+}
+
+article .next-page {
+    margin: 0 0 0 490px;
+    background-color: chartreuse;
+}
+
+.prev-article a,
+.next-article a,
+.article-list a {
+    color: #0c419a;
+}
+
+.article-list {
+    background-color: #b3d4fc;
+    padding: 10px 20px 20px;
+    margin: 20px;
+    line-height: 1.3;
+}
+
+.article--page-list h4 {
+}
+
+.article-list ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0;
+    text-align: center;
+}
+
+.article-list ul li {
+    background-color: #fff;
+    border: #333 1px solid;
+    width: 200px;
+    padding: 15px 10px;
+    vertical-align: middle;
+}
+
+main .local-navi {
+    width: 80%;
+    margin: 0 auto;
+}
