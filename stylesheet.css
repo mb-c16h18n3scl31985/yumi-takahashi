@@ -15,7 +15,7 @@ ul li {
     width: 100%;
     height: 50px;
     z-index: 2;
-    background-color: #0c419a;
+    background-color: #fff;
 }
 
 .header-fixed .logo {
@@ -37,12 +37,10 @@ ul li {
 .global-navi ul.global-navi--text li {
     margin: 0 7px;
     letter-spacing: -0.05em;
-    background-color: #b3d4fc;
 }
 
 .global-navi ul.global-navi--image li {
     margin: 0 18px;
-    background-color: antiquewhite;
 }
 
 .global-navi ul li a {
@@ -54,7 +52,7 @@ ul li {
 }
 
 .global-navi ul.global-navi--text li a:hover {
-    border-bottom: blue 1px solid;
+    border-bottom: #0c419a 2px solid;
 }
 
 .global-navi ul li img {
@@ -65,7 +63,7 @@ ul li {
 /* breadcrumb */
 .breadcrumb {
     display: block;
-    margin:10px 0 20px 80px;
+    margin:60px 0 30px 50px;
     font-size: 12px;
 }
 
@@ -75,7 +73,6 @@ ul li {
 
 /* article-head */
 .article-head {
-    margin-top: 100px;
     background: #fff url(images/h1_whats_2.jpg) no-repeat 0 center ;
     width: 100%;
     height: 250px;
@@ -84,7 +81,12 @@ ul li {
     object-position: 0 30px;
     position: relative;
     color: #fff;
-    padding-left: 250px;
+    padding:40px 0 0 190px;
+}
+
+
+.article-head h2 {
+    margin-top: 15px;
 }
 
 .article-head h1 {
@@ -119,7 +121,6 @@ article img {
 .article--pdf {
     display: block;
     color: #fff;
-    background-color: #005bac;
     padding: 10px 0;
     text-align: center;
     width: 300px;
