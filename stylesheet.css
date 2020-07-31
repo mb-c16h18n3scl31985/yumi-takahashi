@@ -85,17 +85,37 @@ ul li {
 }
 
 
-.article-head h2 {
-    margin-top: 15px;
-}
-
 .article-head h1 {
     font-size: 20px;
     font-weight: normal;
 }
 
-/* sns-button */
+.article-head h2 {
+    margin-top: 15px;
+    font-size: 28px;
+}
 
+
+/* sns-button */
+.sns-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 30px 0 30px auto;
+    max-height: 24px;
+}
+
+.sns-button p {
+    font-size: 10px;
+    margin: 0 11px;
+}
+
+.sns-button a img {
+    height: 24px;
+    margin: 0;
+    vertical-align: bottom;
+    margin: 0 11px;
+}
 
 /* article */
 main article {
