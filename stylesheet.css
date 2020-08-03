@@ -344,7 +344,8 @@ main .local-navi {
 
 /* footer */
 .footer--sns {
-    border: #999 2px solid;
+    border-top: #999 2px solid;
+    border-bottom: #999 2px solid;
     padding: 30px 0;
     display: flex;
     align-items: center;
@@ -367,16 +368,60 @@ main .local-navi {
 .footer--global-navi {
     display: flex;
     flex-wrap: wrap;
+    padding: 40px 0 0 50px;
+    border-bottom: #ccc solid 1px;
 }
 
 .footer--global-navi ul {
-    flex-basis: 25%;
+    flex-basis: 24%;
+    margin-bottom: 70px;
 }
 
 .footer--global-navi ul li {
     font-size: 14px;
+    line-height: 3;
+    background: url(images/symbol/icon-chevronRight.svg) no-repeat 0 50% #fff;
+    background-size: 3px auto;
+    padding-left: 15px;
+}
+
+.footer--global-navi ul li a:hover {
+    text-decoration: underline;
 }
 
 .footer--global-navi ul li h5 {
     font-size: 16px;
+}
+
+.footer--bottom {
+    margin: 70px auto 100px auto;
+    width: 74%;
+}
+
+.footer--bottom ul {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.footer--bottom ul li {
+}
+
+.footer--bottom ul li a {
+    color: #999;
+    font-size: 12px;
+    padding: 0 15px;
+    border-right: #999 1px solid;
+}
+
+.footer--bottom ul li:first-child a {
+    padding-left: 0;
+}
+
+.footer--bottom ul li:last-child a {
+    padding-right: 0;
+    border-right: none;
+}
+
+.footer--bottom p small {
+    font-size: 9px;
 }
