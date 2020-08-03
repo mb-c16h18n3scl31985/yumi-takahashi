@@ -34,8 +34,8 @@ ul li {
     justify-content: space-between;
 }
 
-.global-navi ul.global-navi--text {
-    margin: 0 0 0 300px;
+.global-navi .global-navi--text {
+    margin-left: 280px;
 }
 
 .global-navi ul.global-navi--text li {
@@ -57,6 +57,11 @@ ul li {
 
 .global-navi ul.global-navi--text li a:hover {
     border-bottom: #0c419a 2px solid;
+    color: #0c419a;
+}
+
+.global-navi--image {
+    margin-left: 20px;
 }
 
 .global-navi ul li img {
@@ -67,12 +72,21 @@ ul li {
 /* breadcrumb */
 .breadcrumb {
     display: block;
-    margin:60px 0 30px 50px;
+    margin:60px 0 25px 45px;
     font-size: 12px;
 }
 
 .breadcrumb a {
     color: #999;
+    background: url(images/symbol/icon-chevronRight.svg) no-repeat 0 75% #fff;
+    background-size: 4px auto;
+    padding-left: 10px;
+    margin-right: 4px;
+}
+
+.breadcrumb a:first-child {
+    background: none;
+    padding-left: 0;
 }
 
 /* article-head */
@@ -85,9 +99,8 @@ ul li {
     object-position: 0 30px;
     position: relative;
     color: #fff;
-    padding:40px 0 0 190px;
+    padding:40px 0 0 170px;
 }
-
 
 .article-head h1 {
     font-size: 20px;
@@ -95,10 +108,9 @@ ul li {
 }
 
 .article-head h2 {
-    margin-top: 15px;
+    margin-top: 14px;
     font-size: 28px;
 }
-
 
 /* sns-button */
 .sns-button {
@@ -402,7 +414,7 @@ main .local-navi {
 }
 
 .footer--bottom {
-    margin: 70px auto 100px auto;
+    margin: 70px auto 120px auto;
     width: 74%;
 }
 
@@ -414,7 +426,7 @@ main .local-navi {
 .footer--bottom ul li a {
     color: #999;
     font-size: 12px;
-    padding: 0 15px;
+    padding: 0 17px;
     border-right: #999 1px solid;
 }
 
@@ -432,5 +444,10 @@ main .local-navi {
 }
 
 .footer--bottom p small {
-    font-size: 9px;
+    font-size: 10px;
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    display: block;
 }
