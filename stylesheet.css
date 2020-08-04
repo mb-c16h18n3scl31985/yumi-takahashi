@@ -1,5 +1,5 @@
 body {
-    color: #333;
+    color: #333333;
     font-family: sans-serif;
 }
 
@@ -20,7 +20,7 @@ ul li {
     width: 100%;
     height: 50px;
     z-index: 2;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 .header-fixed .logo {
@@ -78,7 +78,7 @@ ul li {
 }
 
 .breadcrumb a {
-    color: #999;
+    color: #999999;
     background: url(images/symbol/icon-chevronRight.svg) no-repeat 0 75% #fff;
     background-size: 4px auto;
     padding-left: 10px;
@@ -155,7 +155,7 @@ article h2 {
 article p {
     font-size: 16px;
     line-height: 2;
-    color: #333;
+    color: #333333;
     margin-bottom: 10px;
 }
 
@@ -257,7 +257,6 @@ article img {
 .article-list ul li {
     margin: 10px;
     height: 50px;
-    background-color: coral;
     flex-basis: 30%;
     position: relative;
     text-align: center;
@@ -271,7 +270,7 @@ article img {
     width: 100%;
     height: 100%;
     background-color: #fff;
-    border: #333 1px solid;
+    border: #333333 1px solid;
     padding: 15px;
     vertical-align: middle;
     display: flex;
@@ -302,7 +301,7 @@ article img {
 main .local-navi {
     width: 75%;
     margin: 100px auto 0;
-    border-top: #333 solid 2px;
+    border-top: #333333 solid 2px;
 }
 
 .local-navi h3 {
@@ -312,11 +311,11 @@ main .local-navi {
 
 .local-navi section {
     padding: 30px 0 20px 0;
-    border-top: #333 dotted 1px;
+    border-top: #333333 dotted 1px;
 }
 
 .local-navi section:last-of-type {
-    border-bottom: #333 1px dotted;
+    border-bottom: #333333 1px dotted;
 }
 
 .local-navi section * {
@@ -365,8 +364,8 @@ main .local-navi {
 
 /* footer */
 .footer--sns {
-    border-top: #999 2px solid;
-    border-bottom: #999 2px solid;
+    border-top: #999999 2px solid;
+    border-bottom: #999999 2px solid;
     padding: 30px 0;
     display: flex;
     align-items: center;
@@ -425,10 +424,10 @@ main .local-navi {
 }
 
 .footer--bottom ul li a {
-    color: #999;
+    color: #999999;
     font-size: 12px;
     padding: 0 17px;
-    border-right: #999 1px solid;
+    border-right: #999999 1px solid;
 }
 
 .footer--bottom ul li a:hover {
