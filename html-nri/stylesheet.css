@@ -161,7 +161,7 @@ article {
 .article__content img {
     margin: 20px auto;
     display: block;
-    width: 80%;
+    width: 100%;
 }
 
 .article--pdf {
@@ -264,7 +264,7 @@ article {
     width: 100%;
     height: 100%;
     background-color: #fff;
-    border: #333333 1px solid;
+    border: #cccccc 1px solid;
     padding: 15px;
     vertical-align: middle;
     display: flex;
