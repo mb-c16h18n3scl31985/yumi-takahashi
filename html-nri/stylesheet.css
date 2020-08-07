@@ -210,16 +210,24 @@ article {
     display: inline;
 }
 
-.next-article {
-    float: right;
-}
-
 .prev-article a {
     margin-left: 3px;
 }
 
+.prev-article::before {
+    content:"\03c"; 
+}
+
+.next-article {
+    float: right;
+}
+
 .next-article a {
     margin-right: 3px;
+}
+
+.next-article::after {
+    content: "\03e";
 }
 
 .prev-article a:hover,
