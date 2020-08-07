@@ -410,12 +410,16 @@ main .local-navi {
 
 .footer--bottom {
     margin: 70px auto 120px auto;
-    width: 74%;
+    width: 1000px;
 }
 
 .footer--bottom ul {
-    display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 0;
+}
+
+.footer--bottom ul li {
+    display: inline-block;
 }
 
 .footer--bottom ul li a {
