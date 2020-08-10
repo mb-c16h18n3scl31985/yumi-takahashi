@@ -7,7 +7,7 @@
 </head>
 <body>
 <header>
-    <section class="header--fixed">
+    <section>
         <h1>KADOKAWAが創る新しいネットの高校</h1>
         <ul>
             <li><a href="#">入学案内</a></li>
@@ -16,20 +16,20 @@
             <li><a href="#">ブログ</a></li>
             <li><a href="#">WEB出願</a></li>
             <li><a href="#">卒業された方へ</a></li>
+            <li><a href="#">生徒用ログイン</a></li>
         </ul>
-        <a href="#">生徒用ログイン</a>
     </section>
     <section>
-        <div><!--一列目-->
-            <h1><img src="" alt="学校法人角川ドワンゴ学園N高等学校"></h1>
-            <img src="" alt="フリーダイヤル">
+        <div>
+            <h1><img src="images/header/header_mainlogo_pc01.png" alt="学校法人角川ドワンゴ学園N高等学校"></h1>
+            <img src="images/header/header_tel03.png" alt="フリーダイヤル"><p>受付時間:平日10:00〜19:00</p>
             <div class="sns-button">
-                <a href="#"><img src="" alt="Facebook"></a>
-                <a href="#"><img src="" alt="Twitter"></a>
-                <a href="#"><img src="" alt="Youtube"></a>
+                <a href="#"><img src="images/header/header_social01_01.png" alt="Facebook"></a>
+                <a href="#"><img src="images/header/header_social01_02.png" alt="Twitter"></a>
+                <a href="#"><img src="images/header/header_social01_03.png" alt="Youtube"></a>
             </div>
         </div>
-        <div><!--二列目-->
+        <nav class="global-navi">
             <ul>
                 <li><a href="#">N高について</a></li>
                 <li><a href="#">ネットコース</a></li>
@@ -40,8 +40,8 @@
                 <li><a href="#">説明会・相談会</a></li>
                 <li><a href="#">資料請求</a></li>
             </ul>
-        </div>
-        <div><!--三列目-->
+        </nav>
+        <nav class="global-navi__detail">
             <ul>
                 <li><a href="#">高卒資格取得について</a></li>
                 <li><a href="#">Advanced Program</a></li>
@@ -58,7 +58,16 @@
                 <li><a href="#">動画一覧</a></li>
                 <li><a href="#">学費</a></li>
             </ul>
-        </div>
+        </nav>
+        <nav class="header--fixed">
+            <ul>
+                <li><a href="#"><img src="images/header/header_mainlogo_pc01.png" alt="学校法人角川ドワンゴ学園N高等学校"></a></li>
+                <li><img src="images/header/header_tel03.png" alt="フリーダイヤル"></li>
+                <li>受付時間<br>平日10:00〜19:00</li>
+                <li><a href="#">説明会・相談会</a></li>
+                <li><a href="#">資料請求</a></li>
+            </ul>
+        </nav>
     </section>
 </header>
 <main>
@@ -71,7 +80,7 @@
     </section>
     <section>
             <h3>教育方針</h3>
-            <img src="" alt="教育方針の図">
+            <img src="images/main/about_img00_01.png" alt="教育方針の図">
             <table>
                 <tr><th>教養</th><td>自分なりの考えをもつための知識</td></tr>
                 <tr><th>思考力</th><td>知識を使って考える力</td></tr>
@@ -80,18 +89,21 @@
             <div>
                 <h4>N STANDARDS</h4>
                 <p>N高等学校では教育方針をより具体化したN STANDARDS - エヌ スタンダード- という行動規範を設けております。 生徒・教職員はN STANDARDSに記載された12の項目を常に意識することを心がけます。</p>
+                <img src="images/main/credo_card.jpg" alt="N STANDARDS">
             </div>
         </section>
     <article>
         <h3>N高の魅力</h3>
-        <img src="" alt="N高生の1日例">
         <h4>ネットの高校だからやりたいことに多くの時間を使える</h4>
         <p>N高等学校は、インターネットと通信制高校の制度を活用した新しい高校です。そのため、高校卒業のための学習にかかる拘束時間を最小限にとどめる事ができます。だから自らが学びたい事に多くの時間を充てる事ができます。</p>
-        <p>Basic Program：高校卒業資格取得のための必修授業<br>
-        Advanced Program：将来に繋がる豊富な選択授業</p>
+        <p><span>Basic Program：高校卒業資格取得のための必修授業<br>
+        Advanced Program：将来に繋がる豊富な選択授業</span></p>
+        <img src="images/main/about_img02_01_20170927.png" alt="N高生の一日例">
+    </article>
+    <article>
         <h4>増えた時間で<br>将来へ繋がる多くの経験ができる</h4>
-        <img src="" alt="">
         <p>N高では将来へ繋がるオリジナル授業であるAdvanced Program（アドバンスト プログラム）を数多く用意しております。多くの経験からやりたい事をみつけましょう。</p>
+        <img src="images/main/about_img02_02.png" alt="経験の例">
     </article>
     <section>
         <h3>高卒資格取得のためのBasic Program</h3>
@@ -104,7 +116,7 @@
                 <p>※N高等学校は学校教育法第1条に定められた高等学校です。全日制と同じ卒業資格を取得することができます。</p>
                 <p class="read-more">Read More</p>
             </a>
-            <img src="" alt="">
+            <img src="images/main/about_img03_01.jpg" alt="スマホ・パソコンによる授業">
         </article>
         <article>
             <a href="#">
@@ -114,7 +126,7 @@
                 <p>スクーリングは沖縄伊計本校と全国のスクーリング会場から選べます。沖縄本校のスクーリングは大自然の中で充実した学びと、思い出を提供します。また各地域に設置された会場でもスクーリングが可能です。</p>
                 <p class="read-more">Read More</p>
             </a>
-            <img src="" alt="">
+            <img src="images/main/about_img03_02.jpg" alt="沖縄のスクーリング会場">
         </article>
     </section>
     <section>
@@ -127,7 +139,7 @@
                 <p>ネットで行うアドバンスト プログラムでは生放送と教材がセットになった専用アプリを使用。大学受験、プログラミング、文芸小説、外国語、イラストレーター、コミック等ではN予備校を使用して生放送とオリジナル教材で将来への学習ができます。授業等ではN予備校を使用して生放送とオリジナル教材で将来への学習ができます。</p>
                 <p class="read-more">Read More</p>
             </a>
-            <img src="" alt="">
+            <img src="images/main/about_img04_01.jpg" alt="無料で学べる多くの授業">
         </article>
         <article>
             <a href="#">
@@ -136,7 +148,7 @@
                 <p>有名予備校講師11名による生授業と講師による授業に紐づいた教材で大学合格を目指せます。アプリでは50冊分以上ボリュームを誇る参考書・問題集が利用できます。</p>
                 <p class="read-more">Read More</p>
             </a>
-            <img src="" alt="">
+            <img src="images/main/about_img04_02.jpg" alt="実力派予備校講師による授業">
         </article>
         <article>
             <a href="#">
@@ -145,7 +157,7 @@
                 <p>IT業界の最前線で活躍するプログラマが教える、実践的なプログラミング。全てのカリキュラムを終えた時、即戦力のプログラマとして実力が身に付いている事を約束します。</p>
                 <p class="read-more">Read More</p>
             </a>
-            <img src="" alt="">
+            <img src="images/main/about_img04_03.jpg" alt="プログラミングの授業">
         </article>
         <article>
             <a href="#">
@@ -154,7 +166,7 @@
                 <p>夢の職業を学ぶ。夢を見つける為に、様々な仕事に触れる。多くの専門的な職業のアドバンストプログラムを通して、自らの将来を描くことができます。</p>
                 <p class="read-more">Read More</p>
             </a>
-            <img src="" alt="">
+            <img src="images/main/about_img04_04.jpg" alt="パティシエの授業">
         </article>
         <article>
             <a href="#">
@@ -163,7 +175,7 @@
                 <p>N高では多くの自治体や企業、団体と協力し、生徒が様々な地域で職業体験が出来る機会を作ります。多くの仕事に触れることで得た広い視野と価値観は一生の財産となります。</p>
                 <p class="read-more">Read More</p>
             </a>
-            <img src="" alt="">
+            <img src="images/main/about_img04_05.jpg" alt="農場での職業体験">
         </article>
         <article>
             <a href="#">
@@ -173,7 +185,7 @@
                 <p>国際的な生徒育成を目的とするN高等学校では世界の提携校のプログラムに参加する生徒を毎年募集しています。</p>
                 <p class="read-more">Read More</p>
             </a>
-            <img src="" alt="">
+            <img src="images/main/about_img04_06.jpg" alt="国際教育プログラム">
         </article>
         <article>
             <a href="#">
@@ -182,17 +194,17 @@
                 <p>N高では義務教育課程の学び直しをサポートします。中学での学習が原因で、高校の単位取得授業に不安がある方でも再学習することができます。</p>
                 <p class="read-more">Read More</p>
             </a>
-            <img src="" alt="">
+            <img src="images/main/about_img04_07.jpg" alt="中学復習授業">
         </article>
     </section>
     <section>
+        <h3>先端企業が使用するITツールを高校時代から利用</h3>
         <a href="#">
-            <h3>先端企業が使用するITツールを高校時代から利用</h3>
             <h4>slack、GitHub、<br>G Suite for Education<br>などのITツールを<br>利用した<br>コミュニケーションと<br>学習。</h4>
             <p>ネットの高校であるN高では現在、多くの企業で取り入れられているITツールを高校生の段階から利用します。社会へ出る前からIT社会への対応力を養うことができます。</p>
             <p class="read-more">Read More</p>
         </a>
-        <img src="" alt="">
+        <img src="images/main/about_img05_01.jpg" alt="ITツールの例">
     </section>
     <section>
         <a href="#">
@@ -201,7 +213,7 @@
             <p>ニコニコ超会議での文化祭や遠足など、エンターテイメントのプロの現場を体感できます。仲間と出会い力を合わせて目標を達成する喜びや経験は貴重な財産となるはずです。</p>
             <p class="read-more">Read More</p>
         </a>
-        <img src="" alt="">
+        <img src="images/main/about_img06_01.jpg" alt="ニコニコ超会議での文化祭">
     </section>
     <section>
         <a href="#">
@@ -210,7 +222,7 @@
             <p>年間の法人の起業件数は約5万社。もはや、起業は選択肢のひとつ。N高は学生が起業家を目指すことで、イノベーティブな考え方を学び、日本や世界を支える人材を育成するため、起業部を立ち上げます。</p>
             <p class="read-more">Read More</p>
         </a>
-        <img src="" alt="">
+        <img src="images/main/about_img07_01.jpg" alt="N高企業部">
     </section>
     <section>
         <a href="#">
@@ -219,7 +231,7 @@
             <p>N高ではネットの高校独自の部活動があります。囲碁、将棋、競技プログラミング、eスポーツなど。全国のN高生とともに切磋琢磨して成長することができます。</p>
             <p class="read-more">Read More</p>
         </a>
-        <img src="" alt="">
+        <img src="images/main/about_img08_01.jpg" alt="部活動">
     </section>
     <section>
         <h3>ネットの高校は2つの入学コースが選べます</h3>
@@ -229,7 +241,7 @@
                 <p>今、社会が欲する多様性を持った人材を輩出することを目的とした教育プログラムを全国各地から学ぶことができます。高卒資格取得と、他では得られない学習を経験しましょう。</p>
                 <p class="read-more">Read More</p>
             </a>
-            <img src="" alt="">
+            <img src="images/main/about_img08_02.jpg" alt="ネットコース">
         </article>
         <article>
             <a href="#">
@@ -237,7 +249,7 @@
                 <p>N高の通学コースでは、IT・グローバル社会で活躍するために必要な、基礎知識、実践力、思考力を備え、新たな価値を生み出す“創造力”を身につけることができます。日本で唯一の超実践的カリキュラムが、世界を変える人材を育成します。</p>
                 <p class="read-more">Read More</p>
             </a>
-            <img src="" alt="">
+            <img src="images/main/about_img09_04.jpg" alt="通学コースの様子">
         </article>
     </section>
     <section>
@@ -245,9 +257,10 @@
         <h4>将来を考え、<br>夢や目標に一直線な<br>あなたのための<br>提携スクール。</h4>
         <p>プログラミング、ファッション、ゲーム、アニメ、パティシエ、美容、国際教養プログラムなど、夢や目標に突き進みたいN高生のための提携スクール。</p>
         <p class="read-more">Read More</p>
+        <img src="images/main/about_img10.jpg" alt="提携スクールの例">
     </section>
     <section>
-        <h5><img src="" alt="N高って?"></h5>
+        <h5><img src="images/main/about_banner.jpg" alt="N高って?  What is N high school? 5分でわかるN高等学校"></h5>
         <a href="#">
             <p>N高生からのメッセージ</p>
             <p>私達がN高を選んだ理由。</p>
@@ -279,11 +292,11 @@
     <section>
         <h6>学校法人角川ドワンゴ学園は、N高等学校以外にもさまざまな学びの場を提供しています</h6>
         <a href="#">
-            <img src="" alt="">
+            <img src="images/footer/footer05_Njr.png" alt="学校法人角川ドワンゴ学園 N中等部">
             <p>社会で求められる創造力を身につけるプログレッシブスクール</p>
         </a>
         <a href="#">
-            <img src="" alt="">
+            <img src="images/footer/footer05_nlabo.png" alt="N Code Labo">
             <p>N高のpyログラミング教育を小学生・中学生・高校生が学ぶ教室</p>
         </a>
     </section>
