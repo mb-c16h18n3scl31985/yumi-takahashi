@@ -1,4 +1,98 @@
+/* ウェブフォント */
+@font-face {
+    font-family: "AxisStd-UltraLight";
+    src: url("../fonts/a9052c68-9f8f-4738-b7b3-28b7b4074c0e.eot?#iefix");
+    src: url("../fonts/a9052c68-9f8f-4738-b7b3-28b7b4074c0e.eot?#iefix") format("eot"), url("../fonts/9debccc6-f756-4d46-a835-ac342ddbcaf0.woff2") format("woff2"), url("../fonts/726b29c5-dc24-49d5-a06e-107b62843f0b.woff") format("woff"), url("../fonts/fcf3fe94-ef76-4736-8626-e84ee1a9ba39.ttf") format("truetype"), url("../fonts/3d6f6af4-77aa-4896-b039-94e43492d9c6.svg#3d6f6af4-77aa-4896-b039-94e43492d9c6") format("svg");
+}
+
+@font-face {
+    font-family: "AxisStd-ExtraLight";
+    src: url("../fonts/cae76507-fde0-48d2-8060-f95b67662772.eot?#iefix");
+    src: url("../fonts/cae76507-fde0-48d2-8060-f95b67662772.eot?#iefix") format("eot"), url("../fonts/9adc0413-55bd-4001-9bc0-f823476aa22e.woff2") format("woff2"), url("../fonts/25516da4-2e65-456a-bc9c-cc6960f6c384.woff") format("woff"), url("../fonts/8c439ac8-83ef-4635-a477-df9c64f97b62.ttf") format("truetype"), url("../fonts/93d1f11a-903e-4293-a2f1-cd55b87b5087.svg#93d1f11a-903e-4293-a2f1-cd55b87b5087") format("svg");
+}
+
+@font-face {
+    font-family: "AxisStd-Light";
+    src: url("../fonts/aa7c9f5f-bd2d-4fbb-a4a5-82ba2cd0189c.eot?#iefix");
+    src: url("../fonts/aa7c9f5f-bd2d-4fbb-a4a5-82ba2cd0189c.eot?#iefix") format("eot"), url("../fonts/ca94208f-21dd-4dc8-ab7c-057d8dbfcccb.woff2") format("woff2"), url("../fonts/18820f9e-d51e-43be-9d0f-e510d9d1878a.woff") format("woff"), url("../fonts/cb3a3886-7dec-420d-bf42-698737ce3561.ttf") format("truetype"), url("../fonts/9bdde1f9-7637-4fa1-994d-2f2ad4929b1f.svg#9bdde1f9-7637-4fa1-994d-2f2ad4929b1f") format("svg");
+}
+
+@font-face {
+    font-family: "AxisStd-Regular";
+    src: url("../fonts/7e908add-1f72-4926-8e0d-33613fad3a87.eot?#iefix");
+    src: url("../fonts/7e908add-1f72-4926-8e0d-33613fad3a87.eot?#iefix") format("eot"), url("../fonts/d226afef-6536-4b18-9b28-defffcc4baae.woff2") format("woff2"), url("../fonts/6e9eb620-9339-4b2e-bb9b-d514def96de7.woff") format("woff"), url("../fonts/a71ba532-858c-440c-8abd-e89a2ae8efea.ttf") format("truetype"), url("../fonts/5d948218-1de1-4508-b1a6-fe03ccced886.svg#5d948218-1de1-4508-b1a6-fe03ccced886") format("svg");
+}
+
+/* 全般的な設定 */
+
 body {
     color: #272727;
+    font-family: "AxisStd-Light", "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+a {
+    color: inherit;
     text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.max-width-1040 {
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.font-size--small {
+    font-size: 80%;
+}
+
+/* header */
+.header__intro {
+    background-color: #f7f7f7;
+    height: 32px;
+    font-size: 11px;
+    padding: 0 10px;
+}
+
+.header__intro h1 {
+    font-size: 11px;
+    padding: 8px 0 3px;
+    font-weight: normal;
+}
+
+.header__intro ul {
+    padding-top: 3px;
+    margin-left: auto;
+}
+
+.header__intro ul li {
+    padding-top: 5px;
+}
+
+.header__intro ul li a {
+    color: #676767;
+    border-right: solid 1px #272727;
+    padding: 3px 8px;
+}
+
+.header__intro ul li:last-child a {
+    border: none;
+}
+
+.header__intro a.login {
+    padding: 8px 8px 7px 33px;
+    background: url(images/header/icon_site_mark01.png) no-repeat 7px 5px #d9d9d9;
+    background-size: 16px 20px;
+    color: #000066;
+}
+
+.header__intro a:hover {
+    text-decoration: underline;
 }

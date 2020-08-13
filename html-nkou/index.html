@@ -17,20 +17,22 @@
 </head>
 <body>
 <header>
-    <section>
-        <h1>KADOKAWAが創る新しいネットの高校</h1>
-        <ul>
-            <li><a href="#">入学案内</a></li>
-            <li><a href="#">キャンパス</a></li>
-            <li><a href="#">ニュース</a></li>
-            <li><a href="#">ブログ</a></li>
-            <li><a href="#">WEB出願</a></li>
-            <li><a href="#">卒業された方へ</a></li>
-            <li><a href="#">生徒用ログイン</a></li>
-        </ul>
+    <section class="header__intro">
+        <span class="display-flex max-width-1040">
+            <h1>KADOKAWAが創る新しいネットの高校</h1>
+            <ul class="display-flex">
+                <li><a href="#">入学案内</a></li>
+                <li><a href="#">キャンパス</a></li>
+                <li><a href="#">ニュース</a></li>
+                <li><a href="#">ブログ</a></li>
+                <li><a href="#">WEB出願</a></li>
+                <li><a href="#">卒業された方へ</a></li>
+            </ul>
+            <a href="#" class="login">生徒用ログイン</a>
+        </span>
     </section>
     <section>
-        <div>
+        <div class="header__top display-flex">
             <h1><img src="images/header/header_mainlogo_pc01.png" alt="学校法人角川ドワンゴ学園N高等学校"></h1>
             <img src="images/header/header_tel03.png" alt="フリーダイヤル"><p>受付時間:平日10:00〜19:00</p>
             <div class="sns-button">
@@ -39,20 +41,20 @@
                 <a href="#"><img src="images/header/header_social01_03.png" alt="Youtube"></a>
             </div>
         </div>
-        <nav class="global-navi">
-            <ul>
+        <nav class="global-navi display-flex">
+            <ul class="display-flex">
                 <li><a href="#">N高について</a></li>
                 <li><a href="#">ネットコース</a></li>
                 <li><a href="#">通学コース</a></li>
                 <li><a href="#">提携スクール</a></li>
             </ul>
-            <ul>
+            <ul class="display-flex">
                 <li><a href="#">説明会・相談会</a></li>
                 <li><a href="#">資料請求</a></li>
             </ul>
         </nav>
         <nav class="global-navi__detail">
-            <ul>
+            <ul class="display-flex">
                 <li><a href="#">高卒資格取得について</a></li>
                 <li><a href="#">Advanced Program</a></li>
                 <li><a href="#">ITツール</a></li>
@@ -70,7 +72,7 @@
             </ul>
         </nav>
         <nav class="header--fixed">
-            <ul>
+            <ul class="display-flex">
                 <li><a href="#"><img src="images/header/header_mainlogo_pc01.png" alt="学校法人角川ドワンゴ学園N高等学校"></a></li>
                 <li><img src="images/header/header_tel03.png" alt="フリーダイヤル"></li>
                 <li>受付時間<br>平日10:00〜19:00</li>
@@ -106,7 +108,7 @@
         <h3>N高の魅力</h3>
         <h4>ネットの高校だからやりたいことに多くの時間を使える</h4>
         <p>N高等学校は、インターネットと通信制高校の制度を活用した新しい高校です。そのため、高校卒業のための学習にかかる拘束時間を最小限にとどめる事ができます。だから自らが学びたい事に多くの時間を充てる事ができます。</p>
-        <p><span>Basic Program：高校卒業資格取得のための必修授業<br>
+        <p><span class="font-size--small">Basic Program：高校卒業資格取得のための必修授業<br>
         Advanced Program：将来に繋がる豊富な選択授業</span></p>
         <img src="images/main/about_img02_01_20170927.png" alt="拘束時間を減らし、やりたいことに時間が使える">
     </article>
@@ -131,7 +133,7 @@
         <article>
             <a href="#">
                 <p class="program-title">Basic Program</p>
-                <h4>学校に通うのは<br>年5日間程度<span>※</span>の<br>スクーリングだけ。</h4>
+                <h4>学校に通うのは<br>年5日間程度<span class="font-size--small">※</span>の<br>スクーリングだけ。</h4>
                 <p>※標準履修でかつネット学習の状況により適用される日数です。</p>
                 <p>スクーリングは沖縄伊計本校と全国のスクーリング会場から選べます。沖縄本校のスクーリングは大自然の中で充実した学びと、思い出を提供します。また各地域に設置された会場でもスクーリングが可能です。</p>
                 <p class="read-more">Read More</p>
@@ -311,7 +313,7 @@
         </a>
     </section>
     <section class="footer__bottom">
-        <ul>
+        <ul class="display-flex">
             <li><a href="#"><h6>トップ</h6></a></li>
             <li><a href="#"><h6>中3生・新入生の方</h6></a></li>
             <li><a href="#"><h6>転入生の方</h6></a></li>
@@ -320,9 +322,9 @@
             <li><a href="#"><h6>海外在住の方</h6></a></li>
         </ul>
         <a href="#" class="page-top"><img src="images/footer/footer01_to_top01.png" alt="ページトップへ戻る"></a>
-        <nav class="site-map">
+        <nav class="site-map display-flex">
             <ul>
-                <li><a href="#"><h6><span>アドバンスト プログラム</span><br>Advanced Program</h6></a></li>
+                <li><a href="#"><h6><span class="font-size--small">アドバンスト プログラム</span><br>Advanced Program</h6></a></li>
                 <li><a href="#">大学受験対策</a></li>
                 <li><a href="#">プログラミング</a></li>
                 <li><a href="#">クリエイティブ・エンタテインメント</a></li>
@@ -410,14 +412,14 @@
                 <li><a href="#">通信制高校について</a></li>
                 <li><a href="#">特別奨学生募集</a></li>
                 <li><a href="#">教職員採用</a></li>
-                <li><a href="#">制作・開発採用<br><span>(ドワンゴサイトへ)</span></a></li>
+                <li><a href="#">制作・開発採用<br><span class="font-size--small">(ドワンゴサイトへ)</span></a></li>
                 <li><a href="#">お問い合わせ</a></li>
                 <li><a href="#">報道関係者の方へ</a></li>
                 <li><a href="#">インターンシップ(企業様)</a></li>
                 <li><a href="#">卒業された方へ</a></li>
             </ul>
         </nav>
-        <div>
+        <div class="display-flex">
             <small><a href="#">個人情報保護方針</a><a href="#">学校法人概要</a></small>
             <ul>
                 <li><a href="#">N高等学校公式twitter</a></li>
@@ -425,7 +427,7 @@
                 <li><a href="#">N高等学校公式Youtubeチャンネル</a></li>
             </ul>
         </div>
-        <div>
+        <div class="display-flex">
             <nav><a href="#">N高等学校 : ホーム</a></nav>
             <small>KADOKAWA DWANGO educational institute</small>
         </div>
