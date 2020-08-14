@@ -58,6 +58,10 @@ li {
     padding: 3px 8px;
 }
 
+.header__intro a:hover {
+    text-decoration: underline;
+}
+
 .header__intro ul li:last-child a {
     border: none;
 }
@@ -69,14 +73,9 @@ li {
     color: #000066;
 }
 
-.header__intro a:hover {
-    text-decoration: underline;
-}
-
 .header__top {
     height: 96px;
     padding: 20px 0;
-    background-color: lavender;
 }
 
 .header__top img {
@@ -107,4 +106,81 @@ li {
     margin-left: 4px;
     width: 30px;
     height: 30px;
+}
+
+.global-navi {
+    height: 40px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.global-navi__left {
+    margin: 5px 0;
+}
+
+.global-navi__left li:first-child {
+    width: 159px;
+    height: 31px;
+    text-align: center;
+    border-left: solid 1px #676767;
+}
+
+.global-navi__left a {
+    display: block;
+    width: 159px;
+    height: 31px;
+    text-align: center;
+    border-left: solid 1px #676767;
+}
+
+.global-navi__left span {
+    display: block;
+    text-indent :100%;
+    white-space :nowrap;
+    overflow :hidden;
+    margin-top: -3px;
+    height: 10px;
+}
+
+.global-navi__left a:hover > span.color-change {
+    background-position: 50% 100%;
+}
+
+.global-navi__left .about-school {
+    background: url(images/header/global_nav_btn01_01.png) 50% 100% no-repeat;
+}
+
+.global-navi__left .net-course {
+    background: url(images/header/global_nav_btn01_02.png) 50% 0 no-repeat;
+}
+
+.global-navi__left .commute-course {
+    background: url(images/header/global_nav_btn01_03.png) 50% 0 no-repeat;
+}
+
+.global-navi__left .alliance-school {
+    background: url(images/header/global_nav_btn01_04.png) 50% 0 no-repeat;
+}
+
+.global-navi__right {
+    margin: 0 0 0 auto;
+}
+
+.global-navi__right a {
+    display: block;
+    width: 168px;
+    height: 100%;
+    text-align: center;
+    color: #1f286f;
+    font-weight: bold;
+    border: solid 1px #000066;
+    padding: 9px 10px 7px;
+    margin-left: 10px;
+    background: url(images/symbol/icon_arrow01_right_blue01.png) 94% 50% no-repeat;
+    background-size: 5px 9px;
+}
+
+.global-navi__right a:hover {
+    background-color: #000066;
+    color: #ffffff;
 }
