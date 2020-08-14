@@ -2,7 +2,7 @@
 
 body {
     color: #272727;
-    font-family: "M PLUS 1p", "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-family: "M PLUS 1p", "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
 }
 
 a {
@@ -34,6 +34,7 @@ li {
     height: 32px;
     font-size: 11px;
     padding: 0 10px;
+    letter-spacing: 0.1em;
 }
 
 .header__intro h1 {
@@ -70,4 +71,40 @@ li {
 
 .header__intro a:hover {
     text-decoration: underline;
+}
+
+.header__top {
+    height: 96px;
+    padding: 20px 0;
+    background-color: lavender;
+}
+
+.header__top img {
+    height: 28.625px;
+    vertical-align: bottom;
+}
+
+.header__top h1 img {
+    height: 45px;
+}
+
+.header__top .tel {
+    flex-direction: column;
+    margin: 5px 33px 0 auto;
+}
+
+.header__top .tel p {
+    font-size: 11px;
+    color: #8d959c;
+    margin: 4px 0 0 31px;
+}
+
+.header__top .sns-button {
+    margin-top: 14px;
+}
+
+.header__top .sns-button img {
+    margin-left: 4px;
+    width: 30px;
+    height: 30px;
 }
