@@ -19,8 +19,8 @@ li {
     flex-wrap: wrap;
 }
 
-.max-width-1040 {
-    max-width: 1040px;
+.max-width-1060 {
+    max-width: 1060px;
     margin: 0 auto;
 }
 
@@ -116,13 +116,18 @@ li {
 
 .global-navi__left {
     margin: 5px 0;
+    letter-spacing: 0.2em;
 }
 
 .global-navi__left li:first-child {
     width: 159px;
     height: 31px;
     text-align: center;
-    border-left: solid 1px #676767;
+    border-left: solid 1px #d9d9d9;
+}
+
+.global-navi__left li:last-child {
+    border-right: solid 1px #d9d9d9;
 }
 
 .global-navi__left a {
@@ -130,13 +135,13 @@ li {
     width: 159px;
     height: 31px;
     text-align: center;
-    border-left: solid 1px #676767;
+    border-left: solid 1px #d9d9d9;
 }
 
 .global-navi__left span {
     display: block;
-    text-indent :100%;
-    white-space :nowrap;
+    text-indent: 100%;
+    white-space: nowrap;
     overflow :hidden;
     margin-top: -3px;
     height: 10px;
@@ -183,4 +188,78 @@ li {
 .global-navi__right a:hover {
     background-color: #000066;
     color: #ffffff;
+}
+
+.global-navi__detail {
+    background-color: #181836;
+    height: 90px;
+    position: relative;
+}
+
+.global-navi__detail ul::before {
+    content: "\025b2";
+    color: #181836;
+    position: absolute;
+    top: -13px;
+    left: 235px;
+}
+
+.global-navi__detail ul {
+    padding: 10px 10px 4px;
+}
+
+.global-navi__detail a {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0.11em;
+    padding: 7px;
+    margin: 0 8px 2px 10px;
+}
+
+.global-navi__detail li::before {
+    content: url(images/symbol/icon_backslash01_black01.png);
+    vertical-align: -4px;
+}
+
+.global-navi__detail li:first-child::before {
+    content: none;
+    padding-left: none;
+}
+
+.global-navi__detail li:first-child a {
+    margin-left: 0;
+}
+
+.global-navi__detail li:first-child a::before {
+    content: none;
+}
+
+.global-navi__detail a:hover {
+    background-color: #ffffff;
+    color: #181836;
+}
+
+/* main */
+main h2 {
+    min-height: 530px;
+    letter-spacing: 0.3em;
+    font-weight: normal;
+    color: #ffffff;
+    font-size: 50px;
+    text-align: center;
+    background: url(images/main/about_mainimage01.jpg) 0 0 no-repeat;
+    background-size: cover;
+    border-bottom: solid 1px #ffffff;
+    padding: 50px 10px;
+}
+
+main h2 > span {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow :hidden;
+    border-bottom: 1px solid #ffffff;
+    display: block;
+    width: 180px;
+    margin: -65px auto 0;
 }
