@@ -14,6 +14,10 @@ li {
     list-style: none;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+}
+
 .display-flex {
     display: flex;
     flex-wrap: wrap;
@@ -28,8 +32,17 @@ li {
     font-size: 80%;
 }
 
-h1,h2,h3,h4,h5,h6 {
-    font-weight: normal;
+.font-size--tiny {
+    font-size: 70%;
+}
+
+.read-more {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: url(images/main/text_read_more01_black01.png) 17px 0 no-repeat,url(images/symbol/icon_arrow01_right_black01.png) 0 0 no-repeat;
+    background-size: 70px 13px,5px auto;
+    margin-top: 40px;
 }
 
 /* header */
@@ -243,7 +256,7 @@ h1,h2,h3,h4,h5,h6 {
     color: #181836;
 }
 
-/* main */
+/* main__top */
 main h2 {
     min-height: 530px;
     letter-spacing: 0.3em;
@@ -294,7 +307,7 @@ main h2::after {
     margin-right: 5px;
 }
 
-.main__top h3 {
+.about-nkou h3 {
     text-align: center;
     font-size: 35px;
     letter-spacing: 0.2em;
@@ -302,14 +315,14 @@ main h2::after {
     margin: 50px 0 70px;
 }
 
-.main__top h4 {
+.about-nkou h4 {
     text-align: center;
     font-size: 23px;
     line-height: 1.8;
     margin-bottom: 30px;
 }
 
-.main__top h4::after {
+.about-nkou h4::after {
     content: "";
     width: 210px;
     margin: 18px auto 25px;
@@ -317,7 +330,7 @@ main h2::after {
     border-bottom: 1px solid #272727;
 }
 
-.main__top p {
+.about-nkou p {
     margin: 0 210px;
     line-height: 1.8;
     letter-spacing: 0.05em;
@@ -415,7 +428,7 @@ main h2::after {
 }
 
 .feature-of-nkou {
-    margin-top: 80px;
+    margin: 80px auto 120px;
 }
 
 .feature-of-nkou h3 {
@@ -460,27 +473,107 @@ main h2::after {
     padding-top: 15px;
 }
 
+/* main__contents */
+.main__contents {
+    letter-spacing: 0.05em;
+}
 
+.main__contents section {
+    padding: 70px 10px;
+}
 
-/* 各種パーツ */
-.read-more {
+.main__contents section::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.main__contents section:nth-child(odd) {
+    background-color: #f7f7f7;
+    border: solid 1px #e2e2e2;
+}
+
+.main__contents section:nth-child(even) {
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+.main__contents .contents-title {
+    font-size: 32px;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    background: url(images/symbol/line01_black01.png) center bottom no-repeat;
+    background-size: 200px 1px;
+}
+
+.main__contents .contents-title__sub {
+    text-align: center;
+    line-height: 1.8;
+    margin: -30px 0 -40px;
+}
+
+.main__contents .contents-text {
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.main__contents .basic-program {
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
-    background: url(images/main/text_read_more01_black01.png) 17px 0 no-repeat,url(images/symbol/icon_arrow01_right_black01.png) 0 0 no-repeat;
-    background-size: 70px 13px,5px auto;
+    display: inline-block;
+    background: url(images/main/text_basic_program01_white01.png) center 80% no-repeat #272727;
+    background-size: 80px auto;
+    width: 100px;
+    height: 25px;
 }
 
-/* 
-h3.contents-title {
-    font-size: 28px;
-    background: url(images/symbol/line02_black01.png) left bottom no-repeat;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+.main__contents .advanced-program {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    background: url(images/main/text_advanced_program01_white01.png) center 80% no-repeat #272727;
+    background-size: 100px auto;
+    width: 120px;
+    height: 25px;
 }
 
-img.contents-image {
-    float: right;
-    margin: 5px -130px 0 0;
+.main__contents h4 {
+    font-size: 22px;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+
+.main__contents a:hover > h4,
+.main__contents a:hover > p {
+    opacity: 0.7;
+}
+
+.main__contents article {
+    margin: 100px 0;
+}
+
+.main__contents article::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.main__contents section:nth-child(4) img,
+.main__contents section:nth-child(6) img,
+.main__contents article:nth-child(odd) img {
+    float: left;
     vertical-align: bottom;
-} */
+    margin-right: 30px;
+}
+
+.main__contents section:nth-child(3) img,
+.main__contents section:nth-child(5) img,
+.main__contents section:nth-child(8) img,
+.main__contents article:nth-child(even) img {
+    float: right;
+    vertical-align: bottom;
+    margin-left: 30px;
+}
