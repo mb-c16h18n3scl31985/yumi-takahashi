@@ -18,6 +18,14 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
 }
 
+img {
+    vertical-align: bottom;
+}
+
+main {
+    letter-spacing: 0.05em;
+}
+
 .display-flex {
     display: flex;
     flex-wrap: wrap;
@@ -333,7 +341,6 @@ main h2::after {
 .about-nkou p {
     margin: 0 210px;
     line-height: 1.8;
-    letter-spacing: 0.05em;
 }
 
 .educational-policy {
@@ -419,7 +426,6 @@ main h2::after {
 .educational-policy__n-standards p {
     margin-top: 20px;
     line-height: 1.8;
-    letter-spacing: 0.05em;
 }
 
 .educational-policy__n-standards a:hover > img,
@@ -474,12 +480,13 @@ main h2::after {
 }
 
 /* main__contents */
-.main__contents {
-    letter-spacing: 0.05em;
+.main__contents .width-1040 {
+    width: 1040px;
+    margin: 0 auto;
 }
 
 .main__contents section {
-    padding: 70px 10px;
+    padding: 70px 10px 120px;
 }
 
 .main__contents section::after{
@@ -494,7 +501,7 @@ main h2::after {
 }
 
 .main__contents section:nth-child(even) {
-    max-width: 1060px;
+    width: 1060px;
     margin: 0 auto;
 }
 
@@ -515,6 +522,10 @@ main h2::after {
 
 .main__contents .contents-text {
     line-height: 1.8;
+    text-align: justify;
+}
+
+.main__contents p:not(.basic-program):not(.advanced-program):not(.read-more) {
     margin-top: 20px;
 }
 
@@ -546,13 +557,19 @@ main h2::after {
     margin-top: 10px;
 }
 
+.main__contents a {
+    display: block;
+    width: 285px;
+}
+
 .main__contents a:hover > h4,
 .main__contents a:hover > p {
     opacity: 0.7;
 }
 
 .main__contents article {
-    margin: 100px 0;
+    margin-top: 100px;
+    width: 100%;
 }
 
 .main__contents article::after {
@@ -561,13 +578,24 @@ main h2::after {
     display: block;
 }
 
+.main__contents section img {
+    width: 720px;
+    height: 500px;
+}
+
 .main__contents section:nth-child(4) img,
 .main__contents section:nth-child(6) img,
 .main__contents article:nth-child(odd) img {
     float: left;
     vertical-align: bottom;
-    margin-right: 30px;
 }
+
+.main__contents section:nth-child(4) a,
+.main__contents section:nth-child(6) a,
+.main__contents article:nth-child(odd) a {
+    float: right;
+}
+
 
 .main__contents section:nth-child(3) img,
 .main__contents section:nth-child(5) img,
@@ -575,12 +603,17 @@ main h2::after {
 .main__contents article:nth-child(even) img {
     float: right;
     vertical-align: bottom;
-    margin-left: 30px;
+}
+
+.main__contents section:nth-child(3) a,
+.main__contents section:nth-child(5) a,
+.main__contents section:nth-child(8) a,
+.main__contents article:nth-child(even) a {
+    float: left;
 }
 
 /* main__bottom */
 .main__bottom {
-    letter-spacing: 0.05em;
     line-height: 1.7;
     margin-top: 135px;
 }
