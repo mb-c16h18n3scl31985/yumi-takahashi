@@ -639,14 +639,15 @@ main h2::after {
     margin: 0 auto;
 }
 
-.main__bottom .messages--background {
+.messages.--background {
     background: url(images/symbol/bg_diagonal01_black01.png) 0 0 repeat;
     flex-basis: 500px;
     margin-bottom: 30px;
     padding: 7px;
+    border: none;
 }
 
-.main__bottom .messages a {
+.messages a {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -750,7 +751,6 @@ main h2::after {
 .footer__top__info {
     margin-top: 40px;
     justify-content: center;
-    border-bottom: solid 1px #e1e1e1;
     padding-bottom: 40px;
 }
 
@@ -776,3 +776,52 @@ main h2::after {
     background: url(images/symbol/icon_arrow01_right_white01.png) 95% center no-repeat #000000;
     background-size: 6px auto;
 }
+
+/* footer__middle */
+.footer__middle {
+    padding-top: 30px;
+    border-top: solid 1px #e1e1e1;
+}
+
+.footer__middle h6 {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+
+.footer__middle .display-flex {
+    justify-content: space-around;
+}
+
+.footer__middle.--background {
+    background: url(images/symbol/bg_diagonal01_black01.png) 0 0 repeat;
+    flex-basis: 480px;
+    height: 110px;
+    padding: 7px;
+}
+
+.footer__middle a {
+    display: block;
+    background: url(images/symbol/icon_arrow01_right_black01.png) 95% center no-repeat #ffffff;
+    background-size: 5px auto;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 15px 30px 0;
+}
+
+.n-middle-school {
+    height: 35px;
+}
+
+.n-code-labo {
+    height: 45px;
+}
+
+.footer__middle p {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
