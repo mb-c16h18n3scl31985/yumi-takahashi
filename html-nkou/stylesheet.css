@@ -577,3 +577,169 @@ main h2::after {
     vertical-align: bottom;
     margin-left: 30px;
 }
+
+/* main__bottom */
+.main__bottom {
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+    margin-top: 135px;
+}
+
+.main__bottom h5 {
+    text-align: center;
+}
+
+.main__bottom a:hover {
+    opacity: 0.7;
+}
+
+.messages {
+    background-color: #f7f7f7;
+    border: solid 1px #d2d2d2;
+    padding: 50px 0;
+    margin-top: 90px;
+}
+
+.messages .display-flex {
+    justify-content: space-between;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.main__bottom .messages--background {
+    background: url(images/symbol/bg_diagonal01_black01.png) 0 0 repeat;
+    flex-basis: 500px;
+    margin-bottom: 30px;
+    padding: 7px;
+}
+
+.main__bottom .messages a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url(images/symbol/icon_arrow01_right_black01.png) 95% center no-repeat #ffffff;
+    background-size: 5px auto;
+    height: 100%;
+    text-align: left;
+    padding: 13px 45px 13px 30px;
+}
+
+.main__bottom .messages-title {
+    font-size: 26px;
+    color: #272727;
+}
+
+.main__bottom p:not(.messages-title) {
+    font-size: 13px;
+    margin-top: 6px;
+    color: #272727;
+}
+
+/* footer__top */
+.footer__top {
+    margin-top: 100px;
+}
+
+.footer__top__detail {
+    background: url(images/footer/footer02_bg01.png) 0 0 repeat;
+    padding: 35px 0 20px;
+}
+
+.footer__top__detail h5 {
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 0.2em;
+}
+
+.footer__top__detail .display-flex {
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.footer__top__detail__left {
+    margin-right: 45px;
+}
+
+.footer__top__detail__left a {
+    display: block;
+    color: #272727;
+    padding: 13px 15px 13px 60px;
+    width: 258px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer__top__detail__left a:hover {
+    opacity: 0.7;
+}
+
+.footer__top__detail__left a:first-child {
+    background: url(images/symbol/icon_book01_black01.png) 8% center no-repeat,url(images/symbol/icon_arrow01_right_black01.png) 95% center no-repeat #ffffff;
+    background-size: 29px 27px,auto auto;
+}
+
+.footer__top__detail__left a:nth-child(2) {
+    background: url(images/symbol/icon_balloon01_black01.png) 8% center no-repeat,url(images/symbol/icon_arrow01_right_black01.png) 95% center no-repeat #ffffff;
+    background-size: 29px 27px,auto auto;
+}
+
+.footer__top__detail__right img {
+    width: 250px;
+    margin-top: 10px;
+}
+
+.footer__top__detail__right p {
+    color: #fff;
+    text-align: center;
+    margin-top: 3px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+}
+
+.footer__top__detail__right .contact {
+    margin:15px 0 0 auto;
+    font-size: 14px;
+    display: block;
+    color: #ffffff;
+    border: solid 1px #ffffff;
+    text-align: center;
+    padding: 10px;
+    width: 210px;
+    background: url(images/symbol/icon_arrow01_right_white01.png) 95% center no-repeat;
+    background-size: 5px auto;
+}
+
+.footer__top__detail__right .contact:hover {
+    text-decoration: underline;
+}
+
+.footer__top__info {
+    margin-top: 40px;
+    justify-content: center;
+    border-bottom: solid 1px #e1e1e1;
+    padding-bottom: 40px;
+}
+
+.footer__top__info a {
+    color: #000000;
+    display: inline-block;
+    flex-basis: 258px;
+    padding: 12px;
+    border: solid 1px #000000;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    background: url(images/symbol/icon_arrow01_right_black01.png) 95% center no-repeat;
+    background-size: 6px auto;
+}
+
+.footer__top__info a:first-child {
+    margin-right: 35px;
+}
+
+.footer__top__info a:hover {
+    color: #ffffff;
+    background: url(images/symbol/icon_arrow01_right_white01.png) 95% center no-repeat #000000;
+    background-size: 6px auto;
+}
