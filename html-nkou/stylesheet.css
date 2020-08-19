@@ -833,7 +833,7 @@ main h2::after {
 .footer__bottom {
     background-color: #f8f8f8;
     margin-top: 80px;
-    padding: 60px 0 40px;
+    padding: 60px 0 0;
 }
 
 .footer__bottom .width-1040 {
@@ -894,4 +894,90 @@ main h2::after {
 
 .footer__bottom__site-map  > ul:first-child li:first-child {
     margin-top: -15px;
+}
+
+/* footer__extra */
+.footer__extra {
+    margin-top: 50px;
+    border-top: solid 1px #c9c9c9;
+    padding-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__extra small {
+    font-size: 14px;
+}
+
+.footer__extra small a {
+    margin-right: 20px;
+}
+
+.footer__extra ul {
+    display: flex;
+}
+
+.footer__extra ul li {
+    position: relative;
+    border-left: solid 1px #dddddd;
+}
+
+.footer__extra ul li:first-child {
+    border-left: none;
+}
+
+.footer__extra ul li a {
+    display: flex;
+    padding: 10px 30px 10px 10px;
+    color: #272727;
+}
+
+.footer__extra ul li a::after {
+    content: "\03e";
+    color: #aaaaaa;
+    position: absolute;
+    top: 30%;
+    left: 88%;
+    font-size: 14px;
+}
+
+.footer__extra ul li a:hover {
+    text-decoration: none;
+    background-color: #ebebeb;
+}
+
+.footer__extra p {
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+}
+
+.footer__extra img {
+    width: 27px;
+    height: 27px;
+    margin-right: 5px;
+}
+
+/* page-bottom */
+.page-bottom {
+    background-color: #1a1a1a;
+    margin-top: 30px;
+    color: #999999;
+    height: 50px;
+    padding-top: 14px;
+}
+
+.page-bottom .width-1040.display-flex {
+    width: 1040px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-bottom a {
+    font-size: 11.5px;
+}
+
+.page-bottom small {
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
 }
