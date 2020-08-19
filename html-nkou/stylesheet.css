@@ -31,8 +31,8 @@ main {
     flex-wrap: wrap;
 }
 
-.max-width-1060 {
-    max-width: 1060px;
+.width-1040 {
+    width: 1040px;
     margin: 0 auto;
 }
 
@@ -63,18 +63,19 @@ header {
     height: 32px;
     font-size: 11px;
     padding: 0 10px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     position: relative;
     z-index: 2;
 }
 
 .header__intro h1 {
     font-size: 11px;
+    font-weight: bold;
     padding: 8px 0 3px;
 }
 
 .header__intro ul {
-    padding-top: 3px;
+    padding-top: 4px;
     margin-left: auto;
 }
 
@@ -85,7 +86,7 @@ header {
 .header__intro ul li a {
     color: #676767;
     border-right: solid 1px #272727;
-    padding: 3px 8px;
+    padding: 0 8px;
 }
 
 .header__intro a:hover {
@@ -97,14 +98,13 @@ header {
 }
 
 .header__intro a.login {
-    padding: 8px 8px 7px 33px;
+    padding: 8px 6px 7px 28px;
     background: url(images/header/icon_site_mark01.png) no-repeat 7px 5px #d9d9d9;
     background-size: 16px 20px;
     color: #000066;
 }
 
 .header__top {
-    height: 96px;
     padding: 20px 0;
     position: relative;
     z-index: 2;
@@ -112,7 +112,7 @@ header {
 }
 
 .header__top img {
-    height: 28.625px;
+    height: 28.5px;
     vertical-align: bottom;
 }
 
@@ -122,21 +122,22 @@ header {
 
 .header__top .tel {
     flex-direction: column;
-    margin: 5px 33px 0 auto;
+    margin: 5px 32px 0 auto;
 }
 
 .header__top .tel p {
     font-size: 11px;
     color: #8d959c;
     margin: 4px 0 0 31px;
+    letter-spacing: 0.07em;
 }
 
 .header__top .sns-button {
-    margin-top: 14px;
+    margin-top: 15px;
 }
 
 .header__top .sns-button img {
-    margin-left: 4px;
+    margin-left: 3px;
     width: 30px;
     height: 30px;
 }
@@ -152,7 +153,6 @@ header {
 
 .header--fixed .display-flex {
     align-items: center;
-    padding: 0 10px;
 }
 
 .header--fixed ul li {
@@ -240,7 +240,6 @@ header {
     text-indent: 100%;
     white-space: nowrap;
     overflow :hidden;
-    margin-top: -3px;
     height: 10px;
 }
 
@@ -302,7 +301,7 @@ header {
 }
 
 .global-navi__detail ul {
-    padding: 10px 10px 4px;
+    padding: 10px 0 4px;
 }
 
 .global-navi__detail a {
@@ -390,15 +389,15 @@ main h2::after {
 
 .about-nkou h3 {
     text-align: center;
-    font-size: 35px;
-    letter-spacing: 0.2em;
+    font-size: 32px;
+    letter-spacing: 0.25em;
     line-height: 1.8;
     margin: 50px 0 70px;
 }
 
 .about-nkou h4 {
     text-align: center;
-    font-size: 23px;
+    font-size: 22px;
     line-height: 1.8;
     margin-bottom: 30px;
 }
@@ -412,7 +411,7 @@ main h2::after {
 }
 
 .about-nkou p {
-    margin: 0 210px;
+    margin: 0 200px;
     line-height: 1.8;
 }
 
@@ -435,7 +434,7 @@ main h2::after {
 
 .educational-policy__contents img {
     float: right;
-    margin: 5px -130px 0 0;
+    margin: 5px -150px 0 0;
     vertical-align: bottom;
 }
 
@@ -452,11 +451,11 @@ main h2::after {
 
 .educational-policy__contents dt {
     font-size: 25px;
-    padding: 5px 0 5px 0;
+    padding: 7px 0 7px 0;
     border-right: solid 1px #676767;
     float: left;
     clear: left;
-    width: 95px;
+    width: 91px;
     margin-bottom: 20px;
     white-space: nowrap;
 }
@@ -499,6 +498,7 @@ main h2::after {
 .educational-policy__n-standards p {
     margin-top: 20px;
     line-height: 1.8;
+    text-align: justify;
 }
 
 .educational-policy__n-standards a:hover > img,
@@ -534,7 +534,6 @@ main h2::after {
 
 .feature-of-nkou article img {
     float: right;
-    margin-right: 20px;
     vertical-align: bottom;
 }
 
@@ -549,17 +548,12 @@ main h2::after {
     display: block;
     width: 500px;
     border-top: solid 1px #272727;
-    padding-top: 15px;
+    padding-top: 10px;
 }
 
 /* main__contents */
-.main__contents .width-1040 {
-    width: 1040px;
-    margin: 0 auto;
-}
-
 .main__contents section {
-    padding: 70px 10px 120px;
+    padding: 70px 0 120px;
 }
 
 .main__contents section::after{
@@ -574,7 +568,7 @@ main h2::after {
 }
 
 .main__contents section:nth-child(even) {
-    width: 1060px;
+    width: 1040px;
     margin: 0 auto;
 }
 
@@ -582,15 +576,20 @@ main h2::after {
     font-size: 32px;
     text-align: center;
     padding-bottom: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     background: url(images/symbol/line01_black01.png) center bottom no-repeat;
     background-size: 200px 1px;
+}
+
+.main__contents section:first-child .contents-title,
+.main__contents section:nth-child(2) .contents-title {
+    margin-bottom: 20px;
 }
 
 .main__contents .contents-title__sub {
     text-align: center;
     line-height: 1.8;
-    margin: -30px 0 -40px;
+    margin-bottom: -40px;
 }
 
 .main__contents .contents-text {
@@ -627,7 +626,7 @@ main h2::after {
 .main__contents h4 {
     font-size: 22px;
     line-height: 1.8;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .main__contents a {
@@ -669,7 +668,6 @@ main h2::after {
     float: right;
 }
 
-
 .main__contents section:nth-child(3) img,
 .main__contents section:nth-child(5) img,
 .main__contents section:nth-child(8) img,
@@ -688,7 +686,7 @@ main h2::after {
 /* main__bottom */
 .main__bottom {
     line-height: 1.7;
-    margin-top: 135px;
+    margin-top: 90px;
 }
 
 .main__bottom h5 {
@@ -744,7 +742,7 @@ main h2::after {
 
 /* footer__top */
 .footer__top {
-    margin-top: 100px;
+    margin-top: px;
 }
 
 .footer__top__detail {
@@ -909,11 +907,6 @@ main h2::after {
     padding: 60px 0 0;
 }
 
-.footer__bottom .width-1040 {
-    max-width: 1040px;
-    margin: 0 auto;
-}
-
 .footer__bottom h6 {
     color: #000066;
     font-size: 16px;
@@ -1040,8 +1033,7 @@ main h2::after {
     padding-top: 14px;
 }
 
-.page-bottom .width-1040.display-flex {
-    width: 1040px;
+.page-bottom .display-flex {
     justify-content: space-between;
     align-items: center;
 }
