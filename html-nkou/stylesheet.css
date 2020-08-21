@@ -741,10 +741,6 @@ main h2::after {
 }
 
 /* footer__top */
-.footer__top {
-    margin-top: px;
-}
-
 .footer__top__detail {
     background: url(images/footer/footer02_bg01.png) 0 0 repeat;
     padding: 35px 0 20px;
