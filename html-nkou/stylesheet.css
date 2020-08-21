@@ -644,43 +644,22 @@ main h2::after {
     width: 100%;
 }
 
-.main__contents article::after {
-    content: "";
-    clear: both;
-    display: block;
-}
-
 .main__contents section img {
     width: 720px;
     height: 500px;
 }
 
-.main__contents section:nth-child(4) img,
-.main__contents section:nth-child(6) img,
-.main__contents article:nth-child(odd) img {
-    float: left;
-    vertical-align: bottom;
+.article--img-left,
+.section--img-left {
+    display: flex;
+    justify-content: space-between;
 }
 
-.main__contents section:nth-child(4) a,
-.main__contents section:nth-child(6) a,
-.main__contents article:nth-child(odd) a {
-    float: right;
-}
-
-.main__contents section:nth-child(3) img,
-.main__contents section:nth-child(5) img,
-.main__contents section:nth-child(8) img,
-.main__contents article:nth-child(even) img {
-    float: right;
-    vertical-align: bottom;
-}
-
-.main__contents section:nth-child(3) a,
-.main__contents section:nth-child(5) a,
-.main__contents section:nth-child(8) a,
-.main__contents article:nth-child(even) a {
-    float: left;
+.article--img-right,
+.section--img-right {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
 
 /* main__bottom */
