@@ -685,14 +685,14 @@ header {
     height: 500px;
 }
 
-.article--img-left,
-.section--img-left {
+.article__img--left,
+.section__img--left {
     display: flex;
     justify-content: space-between;
 }
 
-.article--img-right,
-.section--img-right {
+.article__img--right,
+.section__img--right {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -799,12 +799,12 @@ header {
     opacity: 0.7;
 }
 
-.nkou-detail--left a.link-box.--book {
+.nkou-detail--left a.link-box--book {
     background: url(images/symbol/icon_book01_black01.png) 8% center no-repeat,url(images/symbol/icon_arrow01_right_black01.png) 95% center no-repeat #ffffff;
     background-size: 29px 27px,auto auto;
 }
 
-.nkou-detail--left a.link-box.--comment {
+.nkou-detail--left a.link-box--comment {
     background: url(images/symbol/icon_balloon01_black01.png) 8% center no-repeat,url(images/symbol/icon_arrow01_right_black01.png) 95% center no-repeat #ffffff;
     background-size: 29px 27px,auto auto;
 }
