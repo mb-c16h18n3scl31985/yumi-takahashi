@@ -423,7 +423,7 @@ header {
     margin: 0 auto;
 }
 
-.about-nkou__heading-style1 {
+.about-nkou__heading--big {
     text-align: center;
     font-size: 32px;
     letter-spacing: 0.25em;
@@ -431,7 +431,7 @@ header {
     margin: 50px 0 70px;
 }
 
-.about-nkou__heading-style2 {
+.about-nkou__heading--small {
     text-align: center;
     font-size: 22px;
     line-height: 1.8;
@@ -594,19 +594,19 @@ header {
 }
 
 /* main__contents */
-.main__contents__section--odd {
+.main__contents--odd {
     padding: 70px 0 120px;
     background-color: #f7f7f7;
     border: solid 1px #e2e2e2;
 }
 
-.main__contents__section--even {
+.main__contents--even {
     padding: 70px 0 120px;
     width: 1040px;
     margin: 0 auto;
 }
 
-.main__contents__section--odd-inner {
+.main__contents__inner--odd {
     width: 1040px;
     margin: 0 auto;
 }
@@ -775,7 +775,7 @@ header {
     letter-spacing: 0.2em;
 }
 
-.nkou-detail--flex {
+.nkou-detail-inner--flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
