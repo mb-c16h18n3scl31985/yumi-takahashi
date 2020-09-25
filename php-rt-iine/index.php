@@ -137,6 +137,15 @@ function makeLink($value)
                         [<a href="index.php?res=<?php echo hsc($post['id']); ?>">Re</a>]
                     </p>
 
+                    <div class="button" style="padding-top:3px;">
+                        <a href="favorite.php">
+                            <img src="images/star-glay.png" width="17" height="17" alt="いいねボタン">
+                        </a>
+                        <a href="retweet.php">
+                            <img src="images/rt-glay.png" width="17" height="17" alt="リツイートボタン">
+                        </a>
+                    </div>
+
                     <p class="day">
                         <a href="view.php?id=<?php echo hsc($post['id']); ?>">
                             <?php echo hsc($post['created']); ?>
