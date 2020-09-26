@@ -2,6 +2,15 @@
 session_start();
 require_once('../dbconnect.php');
 
+//アップロードファイルのmime_typeを検査
+$config['ALLOW_MIME'] = ['image/jpeg', 'image/png', 'image/gif'];
+function checkMime($filename)
+{
+    global $config;
+    $mime = mime_content_type($filename);
+    return in_array($mime, $config['ALLOW_MIME']);
+}
+
 if (!empty($_POST)) {
     //エラー項目の確認
     if ($_POST['name'] == '') {
@@ -21,8 +30,12 @@ if (!empty($_POST)) {
         $ext = substr($fileName, -3);
         if ($ext != 'jpg' && $ext != 'gif') {
             $error['image'] = 'type';
-        };
+        }
+        if (!checkMime($_FILES['image']['tmp_name'])) {
+            $error['image'] = 'mime-error';
+        }
     }
+
 
     //重複アカウントのチェック
     if (empty($error)) {
