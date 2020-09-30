@@ -2,12 +2,8 @@
 session_start();
 require_once('dbconnect.php');
 
-function favorite()
-{
-}
-
-//該当する投稿に対しいいねをしているかどうかの確認
-if (!($GET['post_id'])) {
+if (isset($GET['post_id'])) {
+    //該当する投稿に対しいいねをしているかどうかの確認
     $favorite_set = $db->prepare(
         'SELECT *
         FROM favorite
@@ -39,7 +35,7 @@ if (!($GET['post_id'])) {
             AND deleted=NOW()
             WHERE favorite_post_id=?'
         );
-        $favorite_delete->execute([$_GET['id']]);
+        $favorite_delete->execute([$_GET['post_id']]);
     }
 
     header('Location: index.php');

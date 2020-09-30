@@ -84,21 +84,6 @@ function makeLink($value)
     return mb_ereg_replace("(https?)(://[[:alnum:]\+\$\;\?\.%,!#~*/:@&=_-]+)", '<a href="\1\2">\1\2</a>', $value);
 }
 
-//いいねをした際の画像変更
-$favorite_set = $db->prepare(
-    'SELECT *
-    FROM favorite
-    WHERE member_id=?
-    AND delete_flag=false'
-);
-$favorite_set->execute([$_SESSION['id']]);
-//レコード何行か入ってる、ID自分、記事複数の可能性あり
-
-// $search = $db->prepare('SELECT * 
-// FROM posts,favorite 
-// WHERE posts.id = favorite.favorite_post_id 
-// AND delete_flag != true');
-
 ?>
 
 <!DOCTYPE html>
@@ -143,9 +128,6 @@ $favorite_set->execute([$_SESSION['id']]);
             </form>
 
             <?php foreach ($posts as $post) { ?>
-                <form action="post">
-                    <input type="hidden" name="post_id" value="<?php echo $post['id'] ?>">
-                </form>
 
                 <div class="msg">
                     <img src="member_picture/<?php echo hsc($post['picture']); ?>" width="48" height="48" alt="<?php echo hsc($post['name']); ?>">
@@ -162,9 +144,9 @@ $favorite_set->execute([$_SESSION['id']]);
                         <!-- いいねボタン -->
                         <a href="favorite.php?post_id=<?php echo hsc($post['id']); ?>">
                             <?php
-                            $favorite_records = $favorite_set->fetch($post['id']); //その記事に対するレコード
-                            $favorite_record = $favorite_records[0];
-                            if ($favorite_record) {
+                            $search = $db->prepare('SELECT COUNT(*) FROM favorite WHERE favorite_post_id=? AND member_id=? AND delete_flag=false;');
+                            $search->execute([$post['id'], $post['member_id']]);
+                            if ($search > 0) {
                             ?>
                                 <img src="images/star-yellow.png" width="17" height="17" alt="いいねしています">
                             <?php } else { ?>
