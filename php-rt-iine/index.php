@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('dbconnect.php');
+
 if (isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
     //ログインしている
     $_SESSION['time'] = time();
@@ -36,6 +37,7 @@ if ($page == '') {
     $page = 1;
 }
 $page = max($page, 1);
+
 
 //最終ページの取得
 $counts = $db->query('SELECT COUNT(*) AS cnt FROM posts');
@@ -82,6 +84,21 @@ function makeLink($value)
     return mb_ereg_replace("(https?)(://[[:alnum:]\+\$\;\?\.%,!#~*/:@&=_-]+)", '<a href="\1\2">\1\2</a>', $value);
 }
 
+//いいねをした際の画像変更
+$favorite_set = $db->prepare(
+    'SELECT *
+    FROM favorite
+    WHERE member_id=?
+    AND delete_flag=false'
+);
+$favorite_set->execute([$_SESSION['id']]);
+//レコード何行か入ってる、ID自分、記事複数の可能性あり
+
+// $search = $db->prepare('SELECT * 
+// FROM posts,favorite 
+// WHERE posts.id = favorite.favorite_post_id 
+// AND delete_flag != true');
+
 ?>
 
 <!DOCTYPE html>
@@ -126,6 +143,10 @@ function makeLink($value)
             </form>
 
             <?php foreach ($posts as $post) { ?>
+                <form action="post">
+                    <input type="hidden" name="post_id" value="<?php echo $post['id'] ?>">
+                </form>
+
                 <div class="msg">
                     <img src="member_picture/<?php echo hsc($post['picture']); ?>" width="48" height="48" alt="<?php echo hsc($post['name']); ?>">
 
@@ -138,11 +159,21 @@ function makeLink($value)
                     </p>
 
                     <div class="button" style="padding-top:3px;">
-                        <a href="favorite.php">
-                            <img src="images/star-glay.png" width="17" height="17" alt="いいねボタン">
+                        <!-- いいねボタン -->
+                        <a href="favorite.php?post_id=<?php echo hsc($post['id']); ?>">
+                            <?php
+                            $favorite_records = $favorite_set->fetch($post['id']); //その記事に対するレコード
+                            $favorite_record = $favorite_records[0];
+                            if ($favorite_record) {
+                            ?>
+                                <img src="images/star-yellow.png" width="17" height="17" alt="いいねしています">
+                            <?php } else { ?>
+                                <img src="images/star-gray.png" width="17" height="17" alt="いいねボタン">
+                            <?php } ?>
                         </a>
+
                         <a href="retweet.php">
-                            <img src="images/rt-glay.png" width="17" height="17" alt="リツイートボタン">
+                            <img src="images/rt-gray.png" width="17" height="17" alt="リツイートボタン">
                         </a>
                     </div>
 
@@ -161,6 +192,8 @@ function makeLink($value)
                             [<a href="delete.php?id=<?php echo hsc($post['id']); ?>" style="color:#F33;">削除</a>]
                         <?php } ?>
                     </p>
+
+
                 </div>
             <?php } ?>
 
