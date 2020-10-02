@@ -132,6 +132,7 @@ function makeLink($value)
                 <div class="msg">
                     <img src="member_picture/<?php echo hsc($post['picture']); ?>" width="48" height="48" alt="<?php echo hsc($post['name']); ?>">
 
+
                     <p>
                         <?php echo makeLink(hsc($post['message'])); ?>
                         <span class="name">
@@ -140,42 +141,46 @@ function makeLink($value)
                         [<a href="index.php?res=<?php echo hsc($post['id']); ?>">Re</a>]
                     </p>
 
-                    <div class="button" style="padding-top:3px;">
-                        <!-- いいねボタン -->
-                        <a href="favorite.php?post_id=<?php echo hsc($post['id']); ?>">
-                            <?php
-                            $search = $db->prepare('SELECT COUNT(*) FROM favorite WHERE favorite_post_id=? AND member_id=? AND delete_flag=false;');
-                            $search->execute([$post['id'], $post['member_id']]);
-                            if ($search > 0) {
-                            ?>
-                                <img src="images/star-yellow.png" width="17" height="17" alt="いいねしています">
-                            <?php } else { ?>
-                                <img src="images/star-gray.png" width="17" height="17" alt="いいねボタン">
-                            <?php } ?>
-                        </a>
+                    <div style="display:flex;">
+                        <div class="button" style="margin-right:10px;">
+                            <!-- いいねボタン -->
+                            <form action="favorite.php" method="post" style="display:inline;">
+                                <input type="hidden" name="post_id" value="<?php echo hsc($post['id']); ?>">
+                                <?php
+                                $searches = $db->prepare('SELECT COUNT(*) AS favorite_count
+                                                FROM favorite 
+                                                WHERE favorite_post_id=? AND member_id=? AND delete_flag=false;');
+                                $searches->execute([$post['id'], $_SESSION['id']]);
+                                $search = $searches->fetch();
+                                if ($search['favorite_count'] > 0) {
+                                ?>
+                                    <input type="image" name="submit" src="images/star-yellow.png" width="17" height="17" alt="いいねしています">
+                                <?php } else { ?>
+                                    <input type="image" name="submit" src="images/star-gray.png" width="17" height="17" alt="いいねしています">
+                                <?php } ?>
+                            </form>
 
-                        <a href="retweet.php">
-                            <img src="images/rt-gray.png" width="17" height="17" alt="リツイートボタン">
-                        </a>
-                    </div>
-
-                    <p class="day">
-                        <a href="view.php?id=<?php echo hsc($post['id']); ?>">
-                            <?php echo hsc($post['created']); ?>
-                        </a>
-
-                        <?php if ($post['reply_post_id'] > 0) { ?>
-                            <a href="view.php?id=<?php echo hsc($post['reply_post_id']); ?>">
-                                返信元のメッセージ
+                            <a href="retweet.php">
+                                <img src="images/rt-gray.png" width="17" height="17" alt="リツイートボタン">
                             </a>
-                        <?php } ?>
+                        </div>
 
-                        <?php if ($_SESSION['id'] == $post['member_id']) { ?>
-                            [<a href="delete.php?id=<?php echo hsc($post['id']); ?>" style="color:#F33;">削除</a>]
-                        <?php } ?>
-                    </p>
+                        <p class="day">
+                            <a href="view.php?id=<?php echo hsc($post['id']); ?>">
+                                <?php echo hsc($post['created']); ?>
+                            </a>
 
+                            <?php if ($post['reply_post_id'] > 0) { ?>
+                                <a href="view.php?id=<?php echo hsc($post['reply_post_id']); ?>">
+                                    返信元のメッセージ
+                                </a>
+                            <?php } ?>
 
+                            <?php if ($_SESSION['id'] == $post['member_id']) { ?>
+                                [<a href="delete.php?id=<?php echo hsc($post['id']); ?>" style="color:#F33;">削除</a>]
+                            <?php } ?>
+                        </p>
+                    </div>
                 </div>
             <?php } ?>
 
