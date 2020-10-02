@@ -31,15 +31,13 @@ if (!empty($_POST)) {
     }
 }
 
-//投稿の取得
+//最終ページの取得
 $page = $_REQUEST['page'];
 if ($page == '') {
     $page = 1;
 }
 $page = max($page, 1);
 
-
-//最終ページの取得
 $counts = $db->query('SELECT COUNT(*) AS cnt FROM posts');
 $cnt = $counts->fetch();
 $maxPage = ceil($cnt['cnt'] / 5);
@@ -47,6 +45,9 @@ $page = min($page, $maxPage);
 
 $start = ($page - 1) * 5;
 $start = max(0, $start);
+
+
+//投稿の取得
 $posts = $db->prepare(
     'SELECT members.name,members.picture,posts.*
     FROM members,posts
@@ -156,13 +157,17 @@ function makeLink($value)
                                 ?>
                                     <input type="image" name="submit" src="images/star-yellow.png" width="17" height="17" alt="いいねしています">
                                 <?php } else { ?>
-                                    <input type="image" name="submit" src="images/star-gray.png" width="17" height="17" alt="いいねしています">
+                                    <input type="image" name="submit" src="images/star-gray.png" width="17" height="17" alt="いいねボタン">
                                 <?php } ?>
                             </form>
 
-                            <a href="retweet.php">
-                                <img src="images/rt-gray.png" width="17" height="17" alt="リツイートボタン">
-                            </a>
+                            <!-- リツイートボタン -->
+                            <form action="retweet.php" method="post" style="display:inline;">
+                                <input type="hidden" name="rt_post_id" value="<?php echo hsc($post['id']); ?>">
+                                <input type="hidden" name="rt_message" value="<?php echo hsc($post['message']); ?>">
+                                <input type="hidden" name="rt_member" value="<?php echo hsc($post['name']); ?>">
+                                <input type="image" name="submit" src="images/rt-gray.png" width="17" height="17" alt="リツイートボタン">
+                            </form>
                         </div>
 
                         <p class="day">
