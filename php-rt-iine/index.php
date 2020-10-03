@@ -85,6 +85,17 @@ function makeLink($value)
     return mb_ereg_replace("(https?)(://[[:alnum:]\+\$\;\?\.%,!#~*/:@&=_-]+)", '<a href="\1\2">\1\2</a>', $value);
 }
 
+//いいね数を返す関数
+function favorite_view($db, $post_id)
+{
+    $favorite_posts = $db->prepare('SELECT COUNT(*) AS favorite_count
+                                                FROM favorite 
+                                                WHERE favorite_post_id=? AND member_id=? AND delete_flag=false;');
+    $favorite_posts->execute([$post_id, $_SESSION['id']]);
+    $favorite_post = $favorite_posts->fetch();
+    return $favorite_post['favorite_count'];
+};
+
 ?>
 
 <!DOCTYPE html>
@@ -147,14 +158,8 @@ function makeLink($value)
                             <!-- いいねボタン -->
                             <form action="favorite.php" method="post" style="display:inline;">
                                 <input type="hidden" name="post_id" value="<?php echo hsc($post['id']); ?>">
-                                <?php
-                                $searches = $db->prepare('SELECT COUNT(*) AS favorite_count
-                                                FROM favorite 
-                                                WHERE favorite_post_id=? AND member_id=? AND delete_flag=false;');
-                                $searches->execute([$post['id'], $_SESSION['id']]);
-                                $search = $searches->fetch();
-                                if ($search['favorite_count'] > 0) {
-                                ?>
+
+                                <?php if (favorite_view($db, $post['id']) > 0) { ?>
                                     <input type="image" name="submit" src="images/star-yellow.png" width="17" height="17" alt="いいねしています">
                                 <?php } else { ?>
                                     <input type="image" name="submit" src="images/star-gray.png" width="17" height="17" alt="いいねボタン">
@@ -166,8 +171,18 @@ function makeLink($value)
                                 <input type="hidden" name="rt_post_id" value="<?php echo hsc($post['id']); ?>">
                                 <input type="hidden" name="rt_message" value="<?php echo hsc($post['message']); ?>">
                                 <input type="hidden" name="rt_member" value="<?php echo hsc($post['name']); ?>">
-                                <input type="image" name="submit" src="images/rt-gray.png" width="17" height="17" alt="リツイートボタン">
+                                <?php
+                                $select = $db->prepare('SELECT * FROM posts WHERE member_id=?,rt_post_id=?');
+
+                                if ($select) {
+                                ?>
+                                    <input type="image" name="submit" src="images/rt-blue.png" width="17" height="17" alt="リツイートボタン">
+                                <?php } else { ?>
+                                    <input type="image" name="submit" src="images/rt-gray.png" width="17" height="17" alt="リツイートボタン">
+                                <?php } ?>
                             </form>
+                            <!-- リツイート件数 -->
+                            <?php $db->prepare('SELECT COUNT(*) AS rt_count FROM posts'); ?>
                         </div>
 
                         <p class="day">
