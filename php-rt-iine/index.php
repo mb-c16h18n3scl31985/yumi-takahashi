@@ -98,6 +98,23 @@ function favorite_view($db, $post_id)
     return $favorite_post['favorite_count'];
 }
 
+//ある投稿に対しリツイートしているか否かを返す関数
+function retweet_did($db, $post_id)
+{
+    $retweet = $db->prepare('SELECT * FROM posts WHERE member_id=? AND rt_post_id=?');
+    $retweet->execute([$_SESSION['id'], $post_id]);
+    $retweeted = $retweet->fetch();
+    return $retweeted;
+}
+
+//ある投稿のリツイート件数を返す
+function retweet_count($db, $post_id)
+{
+    $retweeted_counts = $db->prepare('SELECT COUNT(rt_post_id) AS rt_count FROM posts WHERE rt_post_id=?');
+    $retweeted_counts->execute([$post_id]);
+    $retweeted_count = $retweeted_counts->fetch();
+    return $retweeted_count['rt_count'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -155,9 +172,9 @@ function favorite_view($db, $post_id)
                     </p>
 
                     <div style="display:flex;">
-                        <div class="button" style="margin-right:10px;">
+                        <div class="button" style="margin-right:10px; display:flex;">
                             <!-- いいねボタン -->
-                            <form action="favorite.php" method="post" style="display:inline;">
+                            <form action="favorite.php" method="post" style="margin-right:5px">
                                 <input type="hidden" name="post_id" value="<?php echo hsc($post['id']); ?>">
 
                                 <?php if (favorite_view($db, $post['id']) > 0) { ?>
@@ -167,26 +184,23 @@ function favorite_view($db, $post_id)
                                 <?php } ?>
                             </form>
 
-                            <!-- リツイートボタン -->
-                            <form action="retweet.php" method="post" style="display:inline;">
-                                <input type="hidden" name="rt_post_id" value="<?php echo hsc($post['id']); ?>">
-                                <input type="hidden" name="rt_message" value="<?php echo hsc($post['message']); ?>">
-                                <input type="hidden" name="rt_member" value="<?php echo hsc($post['name']); ?>">
-                                <?php
-                                $retweet = $db->prepare('SELECT * FROM posts WHERE member_id=? AND rt_post_id=?');
-                                //ここ*じゃなくてもいい
-                                $retweet->execute([$_SESSION['id'], $post['id']]);
-                                $retweeted = $retweet->fetch();
-                                if ($retweeted) {
-                                ?>
-                                    <input type="image" name="submit" src="images/rt-blue.png" width="17" height="17" alt="リツイートボタン">
-                                <?php } else { ?>
-                                    <input type="image" name="submit" src="images/rt-gray.png" width="17" height="17" alt="リツイートボタン">
-                                <?php } ?>
-                            </form>
-                            <!-- リツイート件数 -->
-                            <?php //$db->prepare('SELECT COUNT(rt_post_id) AS rt_count FROM posts WHERE rt_post_id=?'); 
-                            ?>
+                            <div style="display:flex;">
+                                <!-- リツイートボタン -->
+                                <form action="retweet.php" method="post" style="display:inline;">
+                                    <input type="hidden" name="rt_post_id" value="<?php echo hsc($post['id']); ?>">
+                                    <input type="hidden" name="rt_message" value="<?php echo hsc($post['message']); ?>">
+                                    <input type="hidden" name="rt_member" value="<?php echo hsc($post['name']); ?>">
+                                    <?php if (retweet_did($db, $post['id']) > 0) { ?>
+                                        <input type="image" name="submit" src="images/rt-blue.png" width="17" height="17" alt="リツイートボタン">
+                                    <?php } else { ?>
+                                        <input type="image" name="submit" src="images/rt-gray.png" width="17" height="17" alt="リツイートボタン">
+                                    <?php } ?>
+                                </form>
+                                <!-- リツイート件数 -->
+                                <p>
+                                    <?php echo retweet_count($db, $post['id']); ?>
+                                </p>
+                            </div>
                         </div>
 
                         <p class="day">

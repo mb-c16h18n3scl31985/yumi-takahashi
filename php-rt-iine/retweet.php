@@ -8,7 +8,7 @@ if (isset($_POST['rt_post_id'])) {
         'SELECT members.name,posts.* 
         FROM members,posts
         WHERE members.id=posts.member_id AND posts.rt_post_id = ?'
-    ); //流用しているからデータ*にしているけど減らしたほうがいいのか?
+    ); //*は基本使わない、使いたいデータ指定
     $retweet->execute([$_POST['rt_post_id']]);
     $retweeted = $retweet->fetch();
 
