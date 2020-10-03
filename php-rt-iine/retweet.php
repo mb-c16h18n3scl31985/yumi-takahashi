@@ -1,4 +1,6 @@
 <?php
+session_start();
+require_once('dbconnect.php');
 
 //RTした記事の有無の確認
 if (isset($_POST['rt_post_id'])) {
@@ -11,18 +13,17 @@ if (isset($_POST['rt_post_id'])) {
     $retweeted = $retweet->fetch();
 
     if ($retweeted) {
-        //既にRTした記事がある場合、消去
+        //既にRTした記事がある場合、削除
         $rt_delete = $db->prepare(
-            'UPDATE posts
-            SET rt_post_id=0
-            WHERE member_id=?,rt_post_id=?'
+            'DELETE FROM posts
+            WHERE member_id=? AND rt_post_id=?'
         );
         $rt_delete->execute([$_SESSION['id'], $_POST['rt_post_id']]);
 
-        echo '削除しました';
+        echo $_SESSION['id'] . $_POST['rt_post_id'] . '削除しました';
     } else {
         //投稿
-        $rt_message_body = '@' . $_POST['rt_member'] . ' ' . $_POST['rt_message'];
+        $rt_message_body = 'RT@' . $_POST['rt_member'] . ' ' . $_POST['rt_message'];
 
         $rt_do = $db->prepare(
             'INSERT INTO posts 
@@ -36,6 +37,6 @@ if (isset($_POST['rt_post_id'])) {
         echo '投稿しました';
     }
 
-    // header('Location: index.php');
-    // exit();
+    header('Location: index.php');
+    exit();
 }
