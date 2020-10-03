@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost:8889
--- 生成日時: 2020 年 10 月 03 日 03:55
+-- 生成日時: 2020 年 10 月 03 日 06:03
 -- サーバのバージョン： 5.7.26
 -- PHP のバージョン: 7.4.2
 
@@ -58,7 +58,10 @@ INSERT INTO `favorite` (`id`, `favorite_post_id`, `member_id`, `created`, `delet
 (30, 14, 6, '2020-10-02 09:04:37', 0, '0000-00-00 00:00:00'),
 (31, 20, 6, '2020-10-02 10:04:56', 0, '0000-00-00 00:00:00'),
 (32, 21, 6, '2020-10-02 11:08:55', 1, '2020-10-03 10:27:12'),
-(33, 21, 6, '2020-10-03 10:27:11', 1, '2020-10-03 10:27:12');
+(33, 21, 6, '2020-10-03 10:27:11', 1, '2020-10-03 10:27:12'),
+(34, 30, 8, '2020-10-03 14:55:58', 1, '2020-10-03 14:55:58'),
+(35, 28, 8, '2020-10-03 14:56:00', 0, '0000-00-00 00:00:00'),
+(36, 20, 8, '2020-10-03 14:56:01', 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -118,7 +121,9 @@ INSERT INTO `posts` (`id`, `message`, `member_id`, `reply_post_id`, `rt_post_id`
 (21, 'https://www.php.net/manual/ja/function.mb-ereg-replace', 6, 0, 0, '2020-09-25 16:08:33', '2020-09-25 07:08:33'),
 (28, 'RT@three @three あれまたなんかスペースあるぞ 改行消すの忘れておりました                                     ', 6, 0, 19, '2020-10-03 11:17:14', '2020-10-03 02:17:14'),
 (30, 'RT@three @first DB前の残ってたの削除した 結構勇気いるね', 6, 0, 20, '2020-10-03 12:02:22', '2020-10-03 03:02:22'),
-(31, 'LEAN UX', 6, 0, 0, '2020-10-03 12:04:27', '2020-10-03 03:04:27');
+(31, 'LEAN UX', 6, 0, 0, '2020-10-03 12:04:27', '2020-10-03 03:04:27'),
+(32, 'RT@first RT@three @first DB前の残ってたの削除した 結構勇気いるね', 8, 0, 30, '2020-10-03 14:56:06', '2020-10-03 05:56:06'),
+(33, 'RT@first https://www.php.net/manual/ja/function.mb-ereg-replace', 8, 0, 21, '2020-10-03 14:56:09', '2020-10-03 05:56:09');
 
 --
 -- ダンプしたテーブルのインデックス
@@ -150,7 +155,7 @@ ALTER TABLE `posts`
 -- テーブルのAUTO_INCREMENT `favorite`
 --
 ALTER TABLE `favorite`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- テーブルのAUTO_INCREMENT `members`
@@ -162,4 +167,4 @@ ALTER TABLE `members`
 -- テーブルのAUTO_INCREMENT `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
