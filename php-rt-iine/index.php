@@ -86,7 +86,7 @@ function makeLink($value)
 }
 
 //いいね数を返す関数
-function favorite_view($db, $post_id)
+function favorite_did($db, $post_id)
 {
     $favorite_posts = $db->prepare(
         'SELECT COUNT(*) AS favorite_count
@@ -177,7 +177,7 @@ function retweet_count($db, $post_id)
                             <form action="favorite.php" method="post" style="margin-right:5px">
                                 <input type="hidden" name="post_id" value="<?php echo hsc($post['id']); ?>">
 
-                                <?php if (favorite_view($db, $post['id']) > 0) { ?>
+                                <?php if (favorite_did($db, $post['id']) > 0) { ?>
                                     <input type="image" name="submit" src="images/star-yellow.png" width="17" height="17" alt="いいねしています">
                                 <?php } else { ?>
                                     <input type="image" name="submit" src="images/star-gray.png" width="17" height="17" alt="いいねボタン">
