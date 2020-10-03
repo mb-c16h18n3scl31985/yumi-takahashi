@@ -88,13 +88,15 @@ function makeLink($value)
 //いいね数を返す関数
 function favorite_view($db, $post_id)
 {
-    $favorite_posts = $db->prepare('SELECT COUNT(*) AS favorite_count
-                                                FROM favorite 
-                                                WHERE favorite_post_id=? AND member_id=? AND delete_flag=false;');
+    $favorite_posts = $db->prepare(
+        'SELECT COUNT(*) AS favorite_count
+        FROM favorite 
+        WHERE favorite_post_id=? AND member_id=? AND delete_flag=false;'
+    );
     $favorite_posts->execute([$post_id, $_SESSION['id']]);
     $favorite_post = $favorite_posts->fetch();
     return $favorite_post['favorite_count'];
-};
+}
 
 ?>
 
@@ -144,7 +146,6 @@ function favorite_view($db, $post_id)
                 <div class="msg">
                     <img src="member_picture/<?php echo hsc($post['picture']); ?>" width="48" height="48" alt="<?php echo hsc($post['name']); ?>">
 
-
                     <p>
                         <?php echo makeLink(hsc($post['message'])); ?>
                         <span class="name">
@@ -172,9 +173,11 @@ function favorite_view($db, $post_id)
                                 <input type="hidden" name="rt_message" value="<?php echo hsc($post['message']); ?>">
                                 <input type="hidden" name="rt_member" value="<?php echo hsc($post['name']); ?>">
                                 <?php
-                                $select = $db->prepare('SELECT * FROM posts WHERE member_id=?,rt_post_id=?');
-
-                                if ($select) {
+                                $retweet = $db->prepare('SELECT * FROM posts WHERE member_id=? AND rt_post_id=?');
+                                //ここ*じゃなくてもいい
+                                $retweet->execute([$_SESSION['id'], $post['id']]);
+                                $retweeted = $retweet->fetch();
+                                if ($retweeted) {
                                 ?>
                                     <input type="image" name="submit" src="images/rt-blue.png" width="17" height="17" alt="リツイートボタン">
                                 <?php } else { ?>
@@ -182,7 +185,8 @@ function favorite_view($db, $post_id)
                                 <?php } ?>
                             </form>
                             <!-- リツイート件数 -->
-                            <?php $db->prepare('SELECT COUNT(*) AS rt_count FROM posts'); ?>
+                            <?php //$db->prepare('SELECT COUNT(rt_post_id) AS rt_count FROM posts WHERE rt_post_id=?'); 
+                            ?>
                         </div>
 
                         <p class="day">
