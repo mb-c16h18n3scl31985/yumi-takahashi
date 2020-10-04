@@ -27,8 +27,6 @@ if (!empty($_POST)) {
             $_POST['message'],
             $_POST['reply_post_id']
         ]);
-        header('Location: index.php');
-        exit();
     }
 }
 
@@ -156,7 +154,7 @@ if (isset($_REQUEST['res'])) {
                                 </form>
                                 <!-- リツイート件数 -->
                                 <p>
-                                    <?php echo retweet_count($db, $post['id']); ?>
+                                    <?php echo hsc(retweet_count($db, $post['id'])); ?>
                                 </p>
                             </div>
                         </div>
