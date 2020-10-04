@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('dbconnect.php');
+require_once('function/dbconnect.php');
 
 if (isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
     //ログインしている
@@ -10,7 +10,7 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
     $member = $members->fetch();
 } else {
     //ログインしていない
-    header('Location: login.php');
+    header('Location: function/login.php');
     exit();
 }
 
@@ -137,7 +137,7 @@ function retweet_count($db, $post_id)
         <div id="content">
 
             <div style="text-align: right;">
-                <a href="logout.php">ログアウト</a>
+                <a href="login_out/logout.php">ログアウト</a>
             </div>
             <form action="" method="post">
                 <dl>
@@ -174,7 +174,7 @@ function retweet_count($db, $post_id)
                     <div style="display:flex;">
                         <div class="button" style="margin-right:10px; display:flex;">
                             <!-- いいねボタン -->
-                            <form action="favorite.php" method="post" style="margin-right:5px">
+                            <form action="function/favorite.php" method="post" style="margin-right:5px">
                                 <input type="hidden" name="post_id" value="<?php echo hsc($post['id']); ?>">
 
                                 <?php if (favorite_did($db, $post['id']) > 0) { ?>
@@ -186,7 +186,7 @@ function retweet_count($db, $post_id)
 
                             <div style="display:flex;">
                                 <!-- リツイートボタン -->
-                                <form action="retweet.php" method="post" style="display:inline;">
+                                <form action="function/retweet.php" method="post" style="display:inline;">
                                     <input type="hidden" name="rt_post_id" value="<?php echo hsc($post['id']); ?>">
                                     <input type="hidden" name="rt_message" value="<?php echo hsc($post['message']); ?>">
                                     <input type="hidden" name="rt_member" value="<?php echo hsc($post['name']); ?>">
@@ -204,18 +204,18 @@ function retweet_count($db, $post_id)
                         </div>
 
                         <p class="day">
-                            <a href="view.php?id=<?php echo hsc($post['id']); ?>">
+                            <a href="function/view.php?id=<?php echo hsc($post['id']); ?>">
                                 <?php echo hsc($post['created']); ?>
                             </a>
 
                             <?php if ($post['reply_post_id'] > 0) { ?>
-                                <a href="view.php?id=<?php echo hsc($post['reply_post_id']); ?>">
+                                <a href="function/view.php?id=<?php echo hsc($post['reply_post_id']); ?>">
                                     返信元のメッセージ
                                 </a>
                             <?php } ?>
 
                             <?php if ($_SESSION['id'] == $post['member_id']) { ?>
-                                [<a href="delete.php?id=<?php echo hsc($post['id']); ?>" style="color:#F33;">削除</a>]
+                                [<a href="function/delete.php?id=<?php echo hsc($post['id']); ?>" style="color:#F33;">削除</a>]
                             <?php } ?>
                         </p>
                     </div>

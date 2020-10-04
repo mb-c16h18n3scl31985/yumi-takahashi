@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('dbconnect.php');
+require_once('../function/dbconnect.php');
 
 if ($_COOKIE['email'] != '') {
     $_POST['email'] = $_COOKIE['email'];
@@ -31,7 +31,7 @@ if (!empty($_POST)) {
                 setcookie('password', $_POST['password'], time() + 60 * 60);
             }
 
-            header('Location: index.php');
+            header('Location: ../index.php');
             exit();
         } else {
             $error['login'] = 'failed';

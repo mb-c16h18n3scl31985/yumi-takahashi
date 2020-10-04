@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../dbconnect.php');
+require_once('../function/dbconnect.php');
 
 //アップロードファイルのmime_typeを検査
 $config['ALLOW_MIME'] = ['image/jpeg', 'image/png', 'image/gif'];
@@ -52,7 +52,7 @@ if (!empty($_POST)) {
     if (empty($error)) {
         //画像をアップロードする
         $image = date('YmdHis') . $_FILES['image']['name'];
-        move_uploaded_file($_FILES['image']['tmp_name'], '../member_picture/' . $image);
+        move_uploaded_file($_FILES['image']['tmp_name'], 'member_picture/' . $image);
         $_SESSION['join'] = $_POST;
         $_SESSION['join']['image'] = $image;
         header('Location: check.php');

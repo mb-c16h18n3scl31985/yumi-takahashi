@@ -35,6 +35,6 @@ if (isset($_POST['post_id'])) {
         $favorite_delete->execute([$_POST['post_id']]);
     }
 
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit();
 }

@@ -16,5 +16,5 @@ if (isset($_SESSION['id'])) {
         $del->execute([$id]);
     }
 }
-header('Location: index.php');
+header('Location: ../index.php');
 exit();

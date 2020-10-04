@@ -17,7 +17,7 @@
         </div>
         <div id="content">
             <p>ユーザー登録が完了しました</p>
-            <p><a href="../login.php">ログインする</a></p>
+            <p><a href="../login_out/login.php">ログインする</a></p>
         </div>
 
     </div>

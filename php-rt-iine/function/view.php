@@ -3,7 +3,7 @@ session_start();
 require_once('dbconnect.php');
 
 if (empty($_REQUEST['id'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 
 //投稿の取得
@@ -33,7 +33,7 @@ $posts->execute([$_REQUEST['id']]);
             <h1>ひとこと掲示板</h1>
         </div>
         <div id="content">
-            <p>&laquo;<a href="index.php">一覧に戻る</a></p>
+            <p>&laquo;<a href="../index.php">一覧に戻る</a></p>
             <?php if ($post = $posts->fetch()) { ?>
                 <div class="msg">
                     <img src="member_picture/<?php echo htmlspecialchars($post['picture'], ENT_QUOTES); ?>" width="48" height="48" alt="<?php echo htmlspecialchars($post['name'], ENT_QUOTES); ?>">

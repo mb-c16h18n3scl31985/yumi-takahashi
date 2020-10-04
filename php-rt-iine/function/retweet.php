@@ -34,6 +34,6 @@ if (isset($_POST['rt_post_id'])) {
         ]);
     }
 
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit();
 }
