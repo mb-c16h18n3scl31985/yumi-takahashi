@@ -122,7 +122,7 @@ if (isset($_REQUEST['res'])) {
                     <img src="join/member_picture/<?php echo hsc($post['picture']); ?>" width="48" height="48" alt="<?php echo hsc($post['name']); ?>">
 
                     <p>
-                        <?php echo makeLink(hsc($post['message'])); ?>
+                        <?php echo hsc(makeLink($post['message'])); ?>
                         <span class="name">
                             (<?php echo hsc($post['name']); ?>)
                         </span>
