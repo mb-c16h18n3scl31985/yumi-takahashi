@@ -1,10 +1,4 @@
 <?php
-//htmlspecialchars()のショートカット
-function hsc($value)
-{
-    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
-}
-
 //本文内のURLにリンクを設定
 function makeLink($value)
 {
