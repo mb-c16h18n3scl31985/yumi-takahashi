@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once('../function/dbconnect.php');
+require_once('../function/hsc.php');
+
 if (!isset($_SESSION['join'])) {
     header('Location: index.php');
     exit;
@@ -46,17 +48,17 @@ if (!empty($_POST)) {
                 <dl>
                     <dt>ニックネーム</dt>
                     <dd>
-                        <?php echo htmlspecialchars($_SESSION['join']['name'], ENT_QUOTES); ?>
+                        <?php echo hsc($_SESSION['join']['name']); ?>
                     </dd>
                     <dt>メールアドレス</dt>
                     <dd>
-                        <?php echo htmlspecialchars($_SESSION['join']['email'], ENT_QUOTES); ?>
+                        <?php echo hsc($_SESSION['join']['email']); ?>
                     </dd>
                     <dt>パスワード</dt>
                     <dd>【表示されません】</dd>
                     <dt>写真など</dt>
                     <dd>
-                        <img src="member_picture/<?php echo htmlspecialchars($_SESSION['join']['image'], ENT_QUOTES); ?>" alt="" width="100" height="100" />
+                        <img src="member_picture/<?php echo hsc($_SESSION['join']['image']); ?>" alt="" width="100" height="100" />
                     </dd>
                 </dl>
                 <div>

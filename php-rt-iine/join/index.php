@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('../function/dbconnect.php');
+require_once('../function/hsc.php');
 
 //アップロードファイルのmime_typeを検査
 $config['ALLOW_MIME'] = ['image/jpeg', 'image/png', 'image/gif'];
@@ -92,7 +93,7 @@ if ($_REQUEST['action'] == 'rewrite') {
                         ニックネーム<span class="required">必須</span>
                     </dt>
                     <dd>
-                        <input type="text" name="name" size="35" maxlength="255" value="<?php echo htmlspecialchars($_POST['name'], ENT_QUOTES); ?>" />
+                        <input type="text" name="name" size="35" maxlength="255" value="<?php echo hsc($_POST['name']); ?>" />
                         <?php if ($error['name'] == 'blank') : ?>
                             <p class="error">※ ニックネームを入力して下さい</p>
                         <?php endif; ?>
@@ -101,7 +102,7 @@ if ($_REQUEST['action'] == 'rewrite') {
                         メールアドレス<span class="required">必須</span>
                     </dt>
                     <dd>
-                        <input type="text" name="email" size="35" maxlength="255" value="<?php echo htmlspecialchars($_POST['email'], ENT_QUOTES); ?>" />
+                        <input type="text" name="email" size="35" maxlength="255" value="<?php echo hsc($_POST['email']); ?>" />
                         <?php if ($error['email'] == 'blank') : ?>
                             <p class="error">※ メールアドレスを入力して下さい</p>
                         <?php endif; ?>
@@ -113,7 +114,7 @@ if ($_REQUEST['action'] == 'rewrite') {
                         パスワード<span class="required">必須</span>
                     </dt>
                     <dd>
-                        <input type="password" name="password" size="10" maxlength="20" value="<?php echo htmlspecialchars($_POST['password'], ENT_QUOTES); ?>" />
+                        <input type="password" name="password" size="10" maxlength="20" value="<?php echo hsc($_POST['password']); ?>" />
                         <?php if ($error['password'] == 'blank') : ?>
                             <p class="error">※ パスワードを入力して下さい</p>
                         <?php endif; ?>

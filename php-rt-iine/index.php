@@ -2,6 +2,7 @@
 session_start();
 require_once('function/dbconnect.php');
 require_once('function/org_functions.php');
+require_once('function/hsc.php');
 
 if (isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
     //ログインしている

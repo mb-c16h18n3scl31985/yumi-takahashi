@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('../function/dbconnect.php');
+require_once('../function/hsc.php');
 
 if ($_COOKIE['email'] != '') {
     $_POST['email'] = $_COOKIE['email'];
@@ -70,7 +71,7 @@ if (!empty($_POST)) {
                 <dl>
                     <dt>メールアドレス</dt>
                     <dd>
-                        <input type="text" name="email" size="35" maxlength="255" value="<?php echo htmlspecialchars($_POST['email'], ENT_QUOTES); ?>" />
+                        <input type="text" name="email" size="35" maxlength="255" value="<?php echo hsc($_POST['email']); ?>" />
                         <?php if ($error['login'] == 'blank') { ?>
                             <p class="error">※ メールアドレスとパスワードをご記入下さい</p>
                         <?php }; ?>
@@ -80,7 +81,7 @@ if (!empty($_POST)) {
                     </dd>
                     <dt>パスワード</dt>
                     <dd>
-                        <input type="password" name="password" size="35" maxlength="255" value="<?php echo htmlspecialchars($_POST['password'], ENT_QUOTES); ?>" />
+                        <input type="password" name="password" size="35" maxlength="255" value="<?php echo hsc($_POST['password']); ?>" />
                     </dd>
                     <dt>ログイン情報の記録</dt>
                     <dd>
