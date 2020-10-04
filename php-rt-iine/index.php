@@ -10,7 +10,7 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
     $member = $members->fetch();
 } else {
     //ログインしていない
-    header('Location: function/login.php');
+    header('Location: login_out/login.php');
     exit();
 }
 
@@ -161,7 +161,7 @@ function retweet_count($db, $post_id)
             <?php foreach ($posts as $post) { ?>
 
                 <div class="msg">
-                    <img src="member_picture/<?php echo hsc($post['picture']); ?>" width="48" height="48" alt="<?php echo hsc($post['name']); ?>">
+                    <img src="join/member_picture/<?php echo hsc($post['picture']); ?>" width="48" height="48" alt="<?php echo hsc($post['name']); ?>">
 
                     <p>
                         <?php echo makeLink(hsc($post['message'])); ?>

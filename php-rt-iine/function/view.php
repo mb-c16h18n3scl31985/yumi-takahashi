@@ -24,7 +24,7 @@ $posts->execute([$_REQUEST['id']]);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ひとこと掲示板</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body>
@@ -36,7 +36,7 @@ $posts->execute([$_REQUEST['id']]);
             <p>&laquo;<a href="../index.php">一覧に戻る</a></p>
             <?php if ($post = $posts->fetch()) { ?>
                 <div class="msg">
-                    <img src="member_picture/<?php echo htmlspecialchars($post['picture'], ENT_QUOTES); ?>" width="48" height="48" alt="<?php echo htmlspecialchars($post['name'], ENT_QUOTES); ?>">
+                    <img src="../join/member_picture/<?php echo htmlspecialchars($post['picture'], ENT_QUOTES); ?>" width="48" height="48" alt="<?php echo htmlspecialchars($post['name'], ENT_QUOTES); ?>">
                     <p>
                         <?php echo htmlspecialchars($post['message'], ENT_QUOTES); ?>
                         <span class="name">

@@ -52,7 +52,7 @@ if (!empty($_POST)) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ひとこと掲示板</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body>
@@ -64,7 +64,7 @@ if (!empty($_POST)) {
             <div id="lead">
                 <p>メールアドレスとパスワードを記入してログインしてください。</p>
                 <p>入会手続きがまだの方はこちらからどうぞ。</p>
-                <p>&raquo;<a href="join/">入会手続きをする</a></p>
+                <p>&raquo;<a href="../join/index.php">入会手続きをする</a></p>
             </div>
             <form action="" method="post">
                 <dl>
