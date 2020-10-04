@@ -11,8 +11,8 @@ function makeLink($value)
     return mb_ereg_replace("(https?)(://[[:alnum:]\+\$\;\?\.%,!#~*/:@&=_-]+)", '<a href="\1\2">\1\2</a>', $value);
 }
 
-//いいね数を返す関数
-function favorite_did($db, $post_id)
+//いいね数を返す
+function favorite_count($db, $post_id)
 {
     $favorite_posts = $db->prepare(
         'SELECT COUNT(*) AS favorite_count
