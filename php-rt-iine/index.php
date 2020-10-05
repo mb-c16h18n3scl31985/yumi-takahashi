@@ -32,8 +32,9 @@ if (!empty($_POST)) {
 }
 
 //最終ページの取得
-$page = $_REQUEST['page'];
-if ($page == '') {
+if (!empty($_REQUEST['page'])) {
+    $page = $_REQUEST['page'];
+} else {
     $page = 1;
 }
 $page = max($page, 1);
