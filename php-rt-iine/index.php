@@ -162,18 +162,18 @@ if (isset($_REQUEST['res'])) {
                         </div>
 
                         <p class="day">
-                            <a href="function/view.php?id=<?php echo hsc($post['id']); ?>">
+                            <a href="function/view.php?post_id=<?php echo hsc($post['id']); ?>">
                                 <?php echo hsc($post['created']); ?>
                             </a>
 
                             <?php if ($post['reply_post_id'] > 0) { ?>
-                                <a href="function/view.php?id=<?php echo hsc($post['reply_post_id']); ?>">
+                                <a href="function/view.php?post_id=<?php echo hsc($post['reply_post_id']); ?>">
                                     返信元のメッセージ
                                 </a>
                             <?php } ?>
 
                             <?php if ($_SESSION['id'] == $post['member_id']) { ?>
-                                [<a href="function/delete.php?id=<?php echo hsc($post['id']); ?>" style="color:#F33;">削除</a>]
+                                [<a href="function/delete.php?post_id=<?php echo hsc($post['id']); ?>" style="color:#F33;">削除</a>]
                             <?php } ?>
                         </p>
                     </div>

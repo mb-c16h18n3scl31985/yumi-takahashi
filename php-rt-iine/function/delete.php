@@ -3,7 +3,7 @@ session_start();
 require_once('dbconnect.php');
 
 if (isset($_SESSION['id'])) {
-    $id = $_REQUEST['id'];
+    $id = $_REQUEST['post_id'];
 
     //投稿を検査する
     $messages = $db->prepare('SELECT * FROM posts WHERE id=?');

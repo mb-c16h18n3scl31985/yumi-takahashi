@@ -3,7 +3,7 @@ session_start();
 require_once('dbconnect.php');
 require_once('../function/hsc.php');
 
-if (empty($_REQUEST['id'])) {
+if (empty($_REQUEST['post_id'])) {
     header('Location: ../index.php');
 }
 
@@ -13,7 +13,7 @@ $posts = $db->prepare('SELECT members.name,members.picture,posts.*
     WHERE members.id=posts.member_id
     AND posts.id=?
     ORDER BY posts.created DESC');
-$posts->execute([$_REQUEST['id']]);
+$posts->execute([$_REQUEST['post_id']]);
 ?>
 
 <!DOCTYPE html>
