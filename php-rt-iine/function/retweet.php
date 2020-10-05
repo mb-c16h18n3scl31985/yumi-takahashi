@@ -1,16 +1,11 @@
 <?php
 session_start();
 require_once('dbconnect.php');
+require_once('org_functions.php');
 
-//RTした記事の有無の確認
 if (isset($_POST['rt_post_id'])) {
-    $retweet = $db->prepare(
-        'SELECT members.name,posts.* 
-        FROM members,posts
-        WHERE members.id=posts.member_id AND posts.rt_post_id = ?'
-    );
-    $retweet->execute([$_POST['rt_post_id']]);
-    $retweeted = $retweet->fetch();
+    //ある投稿に対しRTした記事が既にあるかどうかの確認
+    $retweeted = retweet_did($db, $_POST['rt_post_id']);
 
     if ($retweeted) {
         //既にRTした記事がある場合、削除
@@ -20,7 +15,7 @@ if (isset($_POST['rt_post_id'])) {
         );
         $rt_delete->execute([$_SESSION['id'], $_POST['rt_post_id']]);
     } else {
-        //投稿
+        //まだRT記事がない場合は投稿
         $rt_message_body = 'RT@' . $_POST['rt_member'] . ' ' . $_POST['rt_message'];
 
         $rt_do = $db->prepare(
