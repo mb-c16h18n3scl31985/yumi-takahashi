@@ -33,11 +33,7 @@ if (!empty($_POST)) {
 }
 
 //最終ページの取得
-if (!empty($_REQUEST['page'])) {
-    $page = $_REQUEST['page'];
-} else {
-    $page = 1;
-}
+$page = $_REQUEST['page'] ?? 1;
 $page = max($page, 1);
 
 $counts = $db->query('SELECT COUNT(*) AS cnt FROM posts');
