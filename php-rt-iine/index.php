@@ -3,7 +3,7 @@ session_start();
 require_once('function/dbconnect.php');
 require_once('function/retweet_did.php');
 require_once('function/favorite_did.php');
-require_once('../function/shortcut_htmlspecialchars.php');
+require_once('function/shortcut_htmlspecialchars.php');
 
 if (isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
     //ログインしている

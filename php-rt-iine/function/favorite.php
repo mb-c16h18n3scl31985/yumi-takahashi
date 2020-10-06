@@ -1,18 +1,11 @@
 <?php
 session_start();
 require_once('dbconnect.php');
+require_once('favorite_did.php');
 
 if (isset($_POST['post_id'])) {
     //該当する投稿に対しいいねをしているかどうかの確認
-    $favorite_set = $db->prepare(
-        'SELECT *
-        FROM favorite
-        WHERE favorite_post_id=?
-        AND member_id=?
-        AND delete_flag=false'
-    );
-    $favorite_set->execute([$_POST['post_id'], $_SESSION['id']]);
-    $favorite_record = $favorite_set->fetch();
+    $favorite_record = favorite_did($db, $_POST['post_id']);
 
     if (empty($favorite_record)) {
         //いいねをまだしていない場合
