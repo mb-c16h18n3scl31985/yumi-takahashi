@@ -75,15 +75,20 @@ if (isset($_REQUEST['res'])) {
     $message = '@' . $table['name'] . ' ' . $table['message'];
 }
 
-
-//本文内のURLにリンクを設定
+/**
+ * URLをリンクに変換
+ */
 function makeLink($value)
 {
     return mb_ereg_replace("(https?)(://[[:alnum:]\+\$\;\?\.%,!#~*/:@&=_-]+)", '<a href="\1\2">\1\2</a>', $value);
 }
 
-
-//ある投稿のリツイート件数を返す
+/**
+ * ある投稿におけるリツイート件数を返す
+ * @param object PDOオブジェクト
+ * @param int 投稿ID
+ * @return int リツイート件数
+ */
 function retweet_count($db, $post_id)
 {
     $retweeted_counts = $db->prepare('SELECT COUNT(rt_post_id) AS rt_count FROM posts WHERE rt_post_id=?');
