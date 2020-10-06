@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('dbconnect.php');
-require_once('../function/hsc.php');
+require_once('../function/shortcut_htmlspecialchars.php');
 
 if (empty($_REQUEST['post_id'])) {
     header('Location: ../index.php');
@@ -37,15 +37,15 @@ $posts->execute([$_REQUEST['post_id']]);
             <p>&laquo;<a href="../index.php">一覧に戻る</a></p>
             <?php if ($post = $posts->fetch()) { ?>
                 <div class="msg">
-                    <img src="../join/member_picture/<?php echo hsc($post['picture']); ?>" width="48" height="48" alt="<?php echo htmlspecialchars($post['name'], ENT_QUOTES); ?>">
+                    <img src="../join/member_picture/<?php echo h($post['picture']); ?>" width="48" height="48" alt="<?php echo h($post['name']); ?>">
                     <p>
-                        <?php echo hsc($post['message']); ?>
+                        <?php echo h($post['message']); ?>
                         <span class="name">
-                            (<?php echo hsc($post['name']); ?>)
+                            (<?php echo h($post['name']); ?>)
                         </span>
                     </p>
                     <p class="day">
-                        <?php echo hsc($post['created']); ?>
+                        <?php echo h($post['created']); ?>
                     </p>
                 </div>
             <?php } else { ?>

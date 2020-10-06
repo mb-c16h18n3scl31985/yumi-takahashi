@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('dbconnect.php');
-require_once('org_functions.php');
+require_once('retweet_did.php');
 
 if (isset($_POST['rt_post_id'])) {
     //ある投稿に対しRTした記事が既にあるかどうかの確認

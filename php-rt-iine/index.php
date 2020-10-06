@@ -1,8 +1,9 @@
 <?php
 session_start();
 require_once('function/dbconnect.php');
-require_once('function/org_functions.php');
-require_once('function/hsc.php');
+require_once('function/retweet_did.php');
+require_once('function/favorite_did.php');
+require_once('../function/shortcut_htmlspecialchars.php');
 
 if (isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
     //ログインしている
@@ -73,6 +74,23 @@ if (isset($_REQUEST['res'])) {
     $table = $response->fetch();
     $message = '@' . $table['name'] . ' ' . $table['message'];
 }
+
+
+//本文内のURLにリンクを設定
+function makeLink($value)
+{
+    return mb_ereg_replace("(https?)(://[[:alnum:]\+\$\;\?\.%,!#~*/:@&=_-]+)", '<a href="\1\2">\1\2</a>', $value);
+}
+
+
+//ある投稿のリツイート件数を返す
+function retweet_count($db, $post_id)
+{
+    $retweeted_counts = $db->prepare('SELECT COUNT(rt_post_id) AS rt_count FROM posts WHERE rt_post_id=?');
+    $retweeted_counts->execute([$post_id]);
+    $retweeted_count = $retweeted_counts->fetch();
+    return $retweeted_count['rt_count'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -100,14 +118,14 @@ if (isset($_REQUEST['res'])) {
             <form action="" method="post">
                 <dl>
                     <dt>
-                        <?php echo hsc($member['name']); ?>さん、
+                        <?php echo h($member['name']); ?>さん、
                         メッセージをどうぞ
                     </dt>
                     <dd>
                         <textarea name="message" cols="50" rows="3">
-                            <?php echo hsc($message); ?>
+                            <?php echo h($message); ?>
                         </textarea>
-                        <input type="hidden" name="reply_post_id" value="<?php echo hsc($_REQUEST['res']); ?>">
+                        <input type="hidden" name="reply_post_id" value="<?php echo h($_REQUEST['res']); ?>">
                     </dd>
                 </dl>
 
@@ -119,21 +137,21 @@ if (isset($_REQUEST['res'])) {
             <?php foreach ($posts as $post) { ?>
 
                 <div class="msg">
-                    <img src="join/member_picture/<?php echo hsc($post['picture']); ?>" width="48" height="48" alt="<?php echo hsc($post['name']); ?>">
+                    <img src="join/member_picture/<?php echo h($post['picture']); ?>" width="48" height="48" alt="<?php echo h($post['name']); ?>">
 
                     <p>
-                        <?php echo hsc(makeLink($post['message'])); ?>
+                        <?php echo h(makeLink($post['message'])); ?>
                         <span class="name">
-                            (<?php echo hsc($post['name']); ?>)
+                            (<?php echo h($post['name']); ?>)
                         </span>
-                        [<a href="index.php?res=<?php echo hsc($post['id']); ?>">Re</a>]
+                        [<a href="index.php?res=<?php echo h($post['id']); ?>">Re</a>]
                     </p>
 
                     <div style="display:flex;">
                         <div class="button" style="margin-right:10px; display:flex;">
                             <!-- いいねボタン -->
                             <form action="function/favorite.php" method="post" style="margin-right:5px">
-                                <input type="hidden" name="post_id" value="<?php echo hsc($post['id']); ?>">
+                                <input type="hidden" name="post_id" value="<?php echo h($post['id']); ?>">
 
                                 <?php if (favorite_count($db, $post['id']) > 0) { ?>
                                     <input type="image" name="submit" src="images/star-yellow.png" width="17" height="17" alt="いいねしています">
@@ -145,9 +163,9 @@ if (isset($_REQUEST['res'])) {
                             <div style="display:flex;">
                                 <!-- リツイートボタン -->
                                 <form action="function/retweet.php" method="post" style="display:inline;">
-                                    <input type="hidden" name="rt_post_id" value="<?php echo hsc($post['id']); ?>">
-                                    <input type="hidden" name="rt_message" value="<?php echo hsc($post['message']); ?>">
-                                    <input type="hidden" name="rt_member" value="<?php echo hsc($post['name']); ?>">
+                                    <input type="hidden" name="rt_post_id" value="<?php echo h($post['id']); ?>">
+                                    <input type="hidden" name="rt_message" value="<?php echo h($post['message']); ?>">
+                                    <input type="hidden" name="rt_member" value="<?php echo h($post['name']); ?>">
                                     <?php if (retweet_did($db, $post['id']) > 0) { ?>
                                         <input type="image" name="submit" src="images/rt-blue.png" width="17" height="17" alt="リツイートボタン">
                                     <?php } else { ?>
@@ -156,24 +174,24 @@ if (isset($_REQUEST['res'])) {
                                 </form>
                                 <!-- リツイート件数 -->
                                 <p>
-                                    <?php echo hsc(retweet_count($db, $post['id'])); ?>
+                                    <?php echo h(retweet_count($db, $post['id'])); ?>
                                 </p>
                             </div>
                         </div>
 
                         <p class="day">
-                            <a href="function/view.php?post_id=<?php echo hsc($post['id']); ?>">
-                                <?php echo hsc($post['created']); ?>
+                            <a href="function/view.php?post_id=<?php echo h($post['id']); ?>">
+                                <?php echo h($post['created']); ?>
                             </a>
 
                             <?php if ($post['reply_post_id'] > 0) { ?>
-                                <a href="function/view.php?post_id=<?php echo hsc($post['reply_post_id']); ?>">
+                                <a href="function/view.php?post_id=<?php echo h($post['reply_post_id']); ?>">
                                     返信元のメッセージ
                                 </a>
                             <?php } ?>
 
                             <?php if ($_SESSION['id'] == $post['member_id']) { ?>
-                                [<a href="function/delete.php?post_id=<?php echo hsc($post['id']); ?>" style="color:#F33;">削除</a>]
+                                [<a href="function/delete.php?post_id=<?php echo h($post['id']); ?>" style="color:#F33;">削除</a>]
                             <?php } ?>
                         </p>
                     </div>
