@@ -1,5 +1,11 @@
 <?php
-//ある投稿に対しリツイートしているか否かを返す
+
+/**
+ * ある投稿に対しリツイートをしたか否かを返す
+ * @param object $db PDOオブジェクト
+ * @param int $post_id 取得したい投稿のID
+ * @return int リツイートデータ(カラム)の個数(有無)
+ */
 function retweet_did($db, $post_id)
 {
     $retweet = $db->prepare('SELECT * FROM posts WHERE member_id=? AND rt_post_id=?');

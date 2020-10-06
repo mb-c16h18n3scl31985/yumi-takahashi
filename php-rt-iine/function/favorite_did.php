@@ -1,6 +1,12 @@
 <?php
-//いいね数を返す
-function favorite_count($db, $post_id)
+
+/**
+ * ある投稿に対しいいねをしたか否かを返す
+ * @param object $db PDOオブジェクト
+ * @param int $post_id 取得したい投稿のID
+ * @return int いいねカラムの個数(有無)
+ */
+function favorite_did($db, $post_id)
 {
     $favorite_posts = $db->prepare(
         'SELECT COUNT(*) AS favorite_count

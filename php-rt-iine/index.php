@@ -153,7 +153,7 @@ function retweet_count($db, $post_id)
                             <form action="function/favorite.php" method="post" style="margin-right:5px">
                                 <input type="hidden" name="post_id" value="<?php echo h($post['id']); ?>">
 
-                                <?php if (favorite_count($db, $post['id']) > 0) { ?>
+                                <?php if (favorite_did($db, $post['id']) > 0) { ?>
                                     <input type="image" name="submit" src="images/star-yellow.png" width="17" height="17" alt="いいねしています">
                                 <?php } else { ?>
                                     <input type="image" name="submit" src="images/star-gray.png" width="17" height="17" alt="いいねボタン">
