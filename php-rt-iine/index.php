@@ -85,8 +85,8 @@ function makeLink($value)
 
 /**
  * ある投稿におけるリツイート件数を返す
- * @param object PDOオブジェクト
- * @param int 投稿ID
+ * @param object $db PDOオブジェクト
+ * @param int $post_id 投稿ID
  * @return int リツイート件数
  */
 function retweet_count($db, $post_id)
