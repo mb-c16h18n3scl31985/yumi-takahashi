@@ -1,11 +1,11 @@
 <?php
 session_start();
 require_once('dbconnect.php');
-require_once('retweet_did.php');
+require_once('did_retweet.php');
 
 if (isset($_POST['rt_post_id'])) {
     //ある投稿に対しRTした記事が既にあるかどうかの確認
-    $retweeted = retweet_did($db, $_POST['rt_post_id']);
+    $retweeted = did_retweet($db, $_POST['rt_post_id']);
 
     if ($retweeted) {
         //既にRTした記事がある場合、削除
