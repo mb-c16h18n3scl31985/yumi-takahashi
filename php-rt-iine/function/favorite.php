@@ -22,7 +22,7 @@ if (isset($_POST['post_id'])) {
         //既にいいねを押している場合
         $favorite_delete = $db->prepare(
             'UPDATE favorite
-            SET delete_flag=true, deleted=NOW()
+            SET delete_flag=true
             WHERE favorite_post_id=?'
         );
         $favorite_delete->execute([$_POST['post_id']]);
