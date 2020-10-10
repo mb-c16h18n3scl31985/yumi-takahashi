@@ -6,7 +6,7 @@
  * @param int $post_id 取得したい投稿のID
  * @return int いいねカラムの個数(有無)
  */
-function favorite_did($db, $post_id)
+function did_favorite($db, int $post_id)
 {
     $favorite_posts = $db->prepare(
         'SELECT COUNT(*) AS favorite_count
@@ -15,5 +15,5 @@ function favorite_did($db, $post_id)
     );
     $favorite_posts->execute([$post_id, $_SESSION['id']]);
     $favorite_post = $favorite_posts->fetch();
-    return $favorite_post['favorite_count'];
+    return $favorite_post['favorite_count'] > 0;
 }

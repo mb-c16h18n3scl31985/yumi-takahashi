@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once('function/dbconnect.php');
-require_once('function/retweet_did.php');
-require_once('function/favorite_did.php');
+require_once('function/did_retweet.php');
+require_once('function/did_favorite.php');
 require_once('function/shortcut_htmlspecialchars.php');
 
 if (isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
@@ -153,7 +153,7 @@ function retweet_count($db, $post_id)
                             <form action="function/favorite.php" method="post" style="margin-right:5px">
                                 <input type="hidden" name="post_id" value="<?php echo h($post['id']); ?>">
 
-                                <?php if (favorite_did($db, $post['id']) > 0) { ?>
+                                <?php if (did_favorite($db, $post['id'])) { ?>
                                     <input type="image" name="submit" src="images/star-yellow.png" width="17" height="17" alt="いいねしています">
                                 <?php } else { ?>
                                     <input type="image" name="submit" src="images/star-gray.png" width="17" height="17" alt="いいねボタン">
@@ -166,7 +166,7 @@ function retweet_count($db, $post_id)
                                     <input type="hidden" name="rt_post_id" value="<?php echo h($post['id']); ?>">
                                     <input type="hidden" name="rt_message" value="<?php echo h($post['message']); ?>">
                                     <input type="hidden" name="rt_member" value="<?php echo h($post['name']); ?>">
-                                    <?php if (retweet_did($db, $post['id'])) { ?>
+                                    <?php if (did_retweet($db, $post['id'])) { ?>
                                         <input type="image" name="submit" src="images/rt-blue.png" width="17" height="17" alt="リツイートボタン">
                                     <?php } else { ?>
                                         <input type="image" name="submit" src="images/rt-gray.png" width="17" height="17" alt="リツイートボタン">
