@@ -123,10 +123,8 @@ function retweet_count($db, $post_id)
                         メッセージをどうぞ
                     </dt>
                     <dd>
-                        <textarea name="message" cols="50" rows="3">
-                            <?php echo h($message); ?>
-                        </textarea>
-                        <input type="hidden" name="reply_post_id" value="<?php echo h($_REQUEST['res']); ?>">
+                        <textarea name="message" cols="50" rows="3"><?php echo h($message ?? ''); ?></textarea>
+                        <input type="hidden" name="reply_post_id" value="<?php echo h($_REQUEST['res'] ?? ''); ?>">
                     </dd>
                 </dl>
 

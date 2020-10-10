@@ -3,7 +3,7 @@ session_start();
 require_once('../function/dbconnect.php');
 require_once('../function/shortcut_htmlspecialchars.php');
 
-if ($_COOKIE['email'] != '') {
+if (!(empty($_COOKIE['email']))) {
     $_POST['email'] = $_COOKIE['email'];
     $_POST['password'] = $_COOKIE['password'];
     $_POST['save'] = 'on';
@@ -25,9 +25,8 @@ if (!empty($_POST)) {
             $_SESSION['id'] = $member['id'];
             $_SESSION['time'] = time();
 
-
             //ログイン情報の記録
-            if ($_POST['save'] == 'on') {
+            if (!empty($_POST['save']) && $_POST['save'] === 'on') {
                 setcookie('email', $_POST['email'], time() + 60 * 60);
                 setcookie('password', $_POST['password'], time() + 60 * 60);
             }
