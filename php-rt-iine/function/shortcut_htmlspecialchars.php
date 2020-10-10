@@ -7,5 +7,5 @@
  */
 function h($value)
 {
-    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+    return htmlspecialchars(strVal($value), ENT_QUOTES, 'UTF-8');
 }
