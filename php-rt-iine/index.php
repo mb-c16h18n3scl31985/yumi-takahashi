@@ -166,7 +166,7 @@ function retweet_count($db, $post_id)
                                     <input type="hidden" name="rt_post_id" value="<?php echo h($post['id']); ?>">
                                     <input type="hidden" name="rt_message" value="<?php echo h($post['message']); ?>">
                                     <input type="hidden" name="rt_member" value="<?php echo h($post['name']); ?>">
-                                    <?php if (retweet_did($db, $post['id']) > 0) { ?>
+                                    <?php if (retweet_did($db, $post['id'])) { ?>
                                         <input type="image" name="submit" src="images/rt-blue.png" width="17" height="17" alt="リツイートボタン">
                                     <?php } else { ?>
                                         <input type="image" name="submit" src="images/rt-gray.png" width="17" height="17" alt="リツイートボタン">

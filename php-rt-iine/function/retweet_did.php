@@ -11,5 +11,9 @@ function retweet_did($db, $post_id)
     $retweet = $db->prepare('SELECT * FROM posts WHERE member_id=? AND rt_post_id=?');
     $retweet->execute([$_SESSION['id'], $post_id]);
     $retweeted = $retweet->fetch();
-    return $retweeted;
+    if ($retweeted > 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
